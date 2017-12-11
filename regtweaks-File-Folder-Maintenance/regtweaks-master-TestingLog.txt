@@ -1,0 +1,1632 @@
+########################################################################################################################################################
+regtweaks-master Tasks
+########################################################################################################################################################
+This file sections    : How work is done. Likely changes, maybe changes, unlikely changes, and a tab delimited list of all files in 
+                        RegTweaks with proposed changes.
+########################################################################################################################################################
+# How
+#                       0.0  Keep track of ANY changes in a manner in which required is separate from recommended.
+#                            Required changes are errors in .bat .reg scripts.
+#                            Recommended changes are things I think would improve scripts.
+
+#                        *   The types of things that have been found so far that would fall under recommended.
+#                            a. Scripts that could be executed accidentally by clicking on them should have some Pause added to them.
+#                               Cant really do this with .reg scripts.
+#                            b. Prompting user to do stuff instead of simply execute scripts outright.
+#                            c. Renaming files so Readme.txt is a little more descriptive.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+# Likely              : 1.0  Test each registry script. (high-prio)
+#                            - Install versions of Windows, create dummy profiles on multiple computers, and install apps.
+#                       1.1  .bat and .reg (high-prio)
+#                       1.2  Comment/note the matching GPO reference in each script .bat .reg script.
+#                       1.3  "Consistent format/style" with links to source and related links favoring TenForums.com
+#                            a. Create a few templates to show this "Consistent format/style".
+#                            b. HTML link ( http://www.somewebsite ) begins at a line column to fit all links at the same location
+#                               (imagining 1 very large script for all the scripts.)
+#                               this will make scripts that do multiple things easier to manage.
+#                       1.4  Add data from TenForums.com postings to make the scripts a little easier to understand their true effect.
+#                            a. Add the acceptable registry values from TenForums.com
+#                            b. Keep track of when TenForums didnt have some data.
+#                       1.5  Keep track of important commenting/markup strings to easily preserve "consistent format/style"
+#                       1.6  Directory structure or file that can be parsed to locate a script.
+#                            a. Considerations
+#                               - OS Edition
+#                               - Separation of single purpose scripts and ones that edit multiple registry settings.
+#                               - Topics by OS-Component, AppName or AppType, TaskName or Type.
+#                               - Security
+#                               - Experimental
+#                       1.7  Deployment method to tie/bind scripts together for easy follow on usage; useful when one depends on another.
+#                            a. Because there are already so many files the approach should be based on a database file.
+#                       1.8  Keep track of useful info found while doing the reasearch/testing.
+#                       1.9  Maintain/grow some hallmark references from Microsoft and other reputable sources.
+#                            a. Microsofts official stance on registry editing statement, but also its guidance.
+#                            c. Windows Registry reference.
+#                            b. Group Policy admx templates.
+#                       191  Work in a manner in which another person could "pick up where you left off" on the hour. (high-prio)
+#                            Your more likely to finish.
+#                            Automate backtracking by saving browser history for just the webpages with registry scripts/MS Guidance Refs.
+# Maybe               : 2.0  Use the download scripts used for winsevenforums.com
+#                     : 2.1  A single picture for each change when confusing.
+#                     : 2.2  Add some more of the data from winforums.com This would be a lot of work and might be plagarism.
+# Unlikely            : 3.0  None.
+########################################################################################################################################################
+
+Created file Microsoft-Spying-Hosts.txt	E:\c\ScriptsNotMy-\Lang-RegSettings\Unsorted-\Other\regtweaks\Win 10\W10 Telemetry batch remover\Anti telemetry Hosts\Microsoft-Spying-Hosts.txt
+
+Win 8\Windows Mail\Disable Windows Mail splash screen.reg	
+Win 7\Context Menu Adds\Remove Open With Notepad.reg	
+Win 7\Context Menu Adds\Add System Tools.reg	
+Win 7\Enable Functions and Services\Enable Aero Shake.reg	
+OS independent\Context Menu\UEFI Firmware Settings\Add Boot to UEFI Firmware Settings to BOTTOM.reg	
+Win 10\LockScreen\Enable New Login Screen\Enable New Login Screen in Windows 10.reg	
+Win 7\Context Menu Adds\Right-Click_Open_in_New_Process.reg	
+OS independent\DISM\Clean Up Image Restorehealth (use source files).cmd	
+OS independent\Enable verbose service startup shutdown messages\Enable verbose service messages.reg	
+Win 8\System Restore\Configure the system restore points.reg	
+Win 7\Windows Updates\Disable NonAdmins Installing Windows Updates.reg	
+OS independent\External Software\EMET\EMET cert pinning info.txt	
+Win 10\Explorer\Remove Shortcut text\Remove Shortcut text.reg	
+.git\hooks\pre-commit.sample	
+Win 7\Misc Tweaks\Open NFO files with notepad.reg	
+Win 7\Speedup Tweaks\Deactivate Flip3D preview.reg	
+Win 7\Misc Tweaks\Member of a security zone can't add any site.reg	
+Win 10\Features\File system\Enable ReFS\Disable_formatting_with_ReFS.reg	
+Win 8\Explorer\Enable ReFS\Disable_formatting_with_ReFS.reg	
+Win 8\Security\Execute all startup scripts at the same time\Execute all startup scripts at the same time.reg	
+OS independent\Security\DEP\DEP.txt	
+Win 7\Disable Services and Functions\myownmodded.reg	
+Win 7\Context Menu Adds\Add System Shortcuts at Bottom.reg	
+.git\info\exclude	
+Win 10\Tiles\Disable Windows 10 Live Tiles permanently\Disable Windows 10 Live Tiles permanantly.reg	
+Win 10\Tiles\Disable Windows 10 Live Tiles permanently\Enable Windows 10 Live Tiles permanantly.reg	
+Win 7\Disable Services and Functions\Manual Distributed Transaction Coordinator.reg	
+OS independent\Batch\Disable Dynamic Ticks.bat	
+Win 10\Battery\Enable Old Battery Flyout UI in Windows 10\Enable Old Battery Flyout UI in Windows 10.reg	Not a registry file, simply because version string was 5.0 not 5.00
+Win 10\Explorer\Numerical Sorting in File Explorer\Disable numerical sorting.reg	
+Win 8\Explorer\Open File Explorer to This PC instead of libraries.reg	
+Win 10\Security\Microsoft Malicious Software Removal Tool\Enable Microsoft Malicious Software Removal Tool.reg	
+Win 7\Disable Services and Functions\Remove Window Colorization.reg	
+Win 10\Restore functionality of older Photo Viewer\Restore functionality of older Photo Viewer.reg	
+.git\hooks\pre-applypatch.sample	
+Win 10\Context Menu\Safe Mode\Remove_Safe_Mode_from_Desktop_Context_Menu.bat	
+Win 7\Disable Services and Functions\Uninstall system shortcuts in cascading menu in my computer.reg	
+OS independent\Context Menu\Register and unregister dll and ocx files context menus\Register and unregister dll and ocx files context menus.reg	
+Win 10\Remove Delagate Folders from Quick Access\Remove Delagate Folders from Quick Access.reg	
+Win 10\Context Menu\Pin to Quick access\Add_Pin_to_Quick_access_to_Context_Menu.reg	
+Win 10\Network\Network Location Wizard\Disable Network Location Wizard.reg	
+Win 10\remove systemapps\remove all systems apps - danger!.bat	
+Win 8\Windows Update\Do not show install and shutdown.reg	
+Win 10\Taskbar\Enable Old Start Menu in Windows 10\Enable Old Start Menu in Windows 10.reg	
+OS independent\Batch\services\EnableDNSClient.bat	
+Win 7\HDD and SSD\Disable protocoll if HDD full.REG	
+OS independent\Context Menu\Add 'safe mode'\Add_Safe_Mode_to_Desktop_Context_Menu.zip	
+OS independent\Security\Obsolete\Cipher\SSL Cipher tweak RC4 removed.reg	
+Win 10\LockScreen\Disable LockScreen\Enable Lock-Screen.reg	
+Win 7\Disable Services and Functions\Disable Web Client Service.reg	
+Win 7\Enable Functions and Services\Enable AHCI in Windows 7 and Vista.reg	
+.git\objects\pack\pack-4fe9c7f4a3c89abace222cdd3e921cbd0bcb1d0b.idx	
+Win 10\Boot\Change Boot Order\Change Boot animation.bat	
+Win 10\Explorer\Hide Microsoft Edge button in IE\Show Microsoft Edge button in IE.reg	
+OS independent\Security\Firewall\Enable the Standard Profile.reg	
+Win 7\Disable Services and Functions\Disable Smart Card Service.reg	
+Win 10\Context Menu\CAB Context Menu Win 10\Remove_Install_from_cab_context_menu.reg	
+OS independent\Batch\Delete Windows.old.bat	
+OS independent\Context Menu\UEFI Firmware Settings\Remove Boot to UEFI Firmware Settings.reg	
+Win 10\Context Menu\BitLocker\Suspend BitLocker\Remove_Suspend_Bitlocker_protection_from_context_menu.reg	
+Win 7\Disable Services and Functions\Disable Autorun for Fixed Drives.reg	
+Win 7\Disable Services and Functions\Remove God mode.reg	
+OS independent\God Mode\Enable GodMode.reg	
+OS independent\Security\Obsolete\Cipher\SSL Cipher tweak.reg	
+Win 10\Context Menu\Context Menu Items Missing when more than 15 Selected in Windows\Remove Context Menu Items Missing when more than 15 Selected in Windows - Copy.reg	
+OS independent\External Software\O&O ShutUp10\reg tweaks.reg	
+OS independent\Fonts\Change Windows default fonts\Change Windows default fonts.reg	
+Win 7\Misc Tweaks\Increase RPC Packet Size.reg	
+OS independent\Context Menu\Add Right click .wim\Uninstall WIM righ tclick.reg	
+Win 10\Tiles\Clear Tile Notifications during Log on in Windows 10\Turn_On_Clear_Tile_Notifications_during_log_on (1).reg	FixRenamed Turn_On_Clear_Tile_Notifications_during_log_on (1).reg to Turn_On_Clear_Tile_Notifications_during_log_on.reg
+Win 10\Context Menu\Choose Power Plan\Add_Choose_Power_Plan_to_Desktop_Context_Menu.reg	
+Win 10\Theme\Theme change\Allow users to change and save theme.reg	
+Win 10\Context Menu\Run with priority\Add_Run_with_priority_to_context_menu.reg	
+Win 7\Disable Services and Functions\Remove Games on Start Menu.reg	
+Win 10\Context Menu\BitLocker\Add_Turn_on_BitLocker_context_menu.reg	
+Win 7\UAC\Only UAC for secure software.reg	
+Win 10\Features\Calculator\win32calc_14393_x64.zip	
+OS independent\External Software\nVidia\Disable nVidia telemetry.reg	
+Win 10\Windows Update\Disables drivers search on Windows Update\Disables drivers search on Windows Update.reg	
+Win 7\Disable Services and Functions\Remove warning about showing hidden system folders.reg	
+Win 7\HDD and SSD\Disables SSD for Hybriddrives.REG	
+Win 8\Windows Update\Wake the PC to install and search for Updates.reg	
+Win 10\Explorer\Enable Pin and Unpin Items on Jump Lists\Disable Pin Unpin Items on Jump Lists.reg	
+Win 8\Security\Do not allow 16-Bit apps\Do not allow 16-Bit apps.reg	
+OS independent\Batch\registryadmin.bat	
+Win 7\Tools\runassystem.exe	
+Win 8\Apps\Change Default Windows 8.1 Apps Install Folder.reg	
+Win 10\DISM\useful commands.txt	
+Win 7\Disable Services and Functions\Manual Volume Shadow Copy.reg	
+Win 10\Explorer\Enable Windows Features\Enable Windows Features.reg	
+Win 8\Promt as Admin\Right Click DrivesFolders for Elevated Cmd and Powershell Window.bat	
+OS independent\MSI Mode\Readme.txt	
+Win 10\Info\How to Disable Forced Automatic Updates on Windows 10 (Tutorial).txt	
+Win 7\Misc Tweaks\Enable Windows Key Hotkeys.reg	
+Win 7\Context Menu Adds\Add Copy Contents To Clipboard.reg	
+Win 10\Features\Disable OneDrive\RemoveOneDrive.bat	
+OS independent\MSI Mode\MSI_util.exe	
+Win 10\Windows Update\Hide single updates\wushowhide.diagcab	
+Win 10\W10 Telemetry batch remover\Windows 10 Enterprise N LTSB destroy-spying.ps1	
+Win 10\Windows Mobility Center on a Desktop\Enable Windows Mobiity Center on desktop PC.reg	
+Win 8\services.msc\Hiberation disable.reg	
+Win 8\Security\Hide Legacy Logon Scripts\Hide Legacy Logon Scripts.reg	
+Win 7\Context Menu Adds\Shift+Right-Click_Open_in_New_Process.reg	
+Win 10\Control Panel\Classic Personalization\Add Classic Personalization.reg	
+Win 7\Misc Tweaks\Hover window select.reg	
+OS independent\Security\Disable SMB\Disable SMB v1 and v2.reg	
+Win 7\Sound\Disable Boot Sounds.REG	
+Win 7\Context Menu Adds\Add Unhide File.reg	
+Win 7\UAC\Configure UAC for Software.reg	
+OS independent\Batch\Disable Biometrics.bat	
+OS independent\Batch\OV & UV\CPU underclocking.bat	
+Win 10\Boot\Enable Fastboot\Turn_On_Fast_Startup.bat	
+Win 8\Boot\Turn_On_Fast_Startup.bat	
+Win 7\Windows Defender\Disable Windows Defender Registry Script.reg	
+Win 7\Security\Clear the Page File at shutdown.reg	
+Win 10\Energy profiles\ParkControl Pro.exe	
+Win 10\Features\Disable Preview Builds\Enable_Windows_10_Insider_Program_Settings.reg	
+Win 7\Context Menu Adds\BAT-add Open with.reg	
+OS independent\External Software\AMD\Enable Load all devices and drivers.reg	
+OS independent\External Software\Kaspersky\YOQ8GX.jpg	
+Win 10\Remote Desktop\Disable Always Prompt for Password upon Remote Desktop Connection\Enable Always prompt for password upon RDC to this PC.reg	
+Win 7\HDD and SSD\Correct error control and warning.REG	
+Win 7\Disable Services and Functions\Remove Network Connections.reg	
+Win 7\Disable Services and Functions\Remove Printers.reg	
+Win 10\Remove Adobe Flash\All_flash_remmoval.bat	
+Win 8\My Computer\Remove Videos Link from My Computer.reg	
+Win 8\Shell\Completely disable accessibility options.reg	
+Win 10\Security Center\Hide Firewall & Network Protection\Hide Firewall and network protection.reg	
+Win 7\Disable Services and Functions\Manual Network Connections.reg	
+Win 7\Disable Services and Functions\Disable grouping of system tray icons.reg	
+OS independent\Security\UAC\BLOCK_unsigned_elevation.reg	
+Win 7\Misc Tweaks\Only show Policies that are currently active.reg	
+OS independent\Security\Firewall\Disable Notifications Popups for Domain Profile.reg	
+Win 7\Context Menu Adds\Add Desktop Shortcuts.reg	
+Win 10\Context Menu\Share with\Restore Sharing Tab in Properties Window.reg	
+OS independent\External Software\Sandboxie\Run Unsandboxed.zip	
+Win 8\Security\Deny executable access to USB media\Disable USB acess for .exe.reg	
+OS independent\Batch\Updates\remove spsupersuded updates.bat	
+Win 7\Enable Functions and Services\Disable Notification Area Icons Settings.reg	
+Win 7\Disable Services and Functions\Disable Disk Defragmenter task.txt	
+Win 7\Info\Disable Disk Defragmenter task.txt	
+Win 10\Classic Appearance Settings for Desktop Cascade under Right Click\Classic Appearance Settings for Desktop Cascade  Right Click.reg	
+Win 7\Context Menu Adds\Add register  unregister to the context menu for .ocx files.reg	
+OS independent\Batch\Disable User Account Control.bat	
+Win 10\Context Menu\Edit with 3D Paint\Remove Edit with 3D Paint.reg	
+Win 7\Disable Services and Functions\Disable Link-Layer Topology Discovery Mapper service.reg	
+Win 7\Security\CabinetState.reg	
+Win 10\Cortana\Disable Cortana Floating Search Bar\Enable Cortana floating Search bar.reg	
+Win 8\Explorer\Use classic search in Explorer.reg	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Enable Remote Desktop with Network Level Authentification.reg	
+Win 7\HDD and SSD\Disables save if HDD is full.REG	
+Win 7\Context Menu Adds\Add Services Option.reg	
+Win 8\Boot\Enable Scan Disk for the next reboot.reg	
+Win 10\Enable Secret Dark Theme\Restore Default Theme.reg	
+Win 8\services.msc\Hiberboot disable.reg	
+Win 7\Explorer\Explorer Nav panel.reg	
+Win 10\Context Menu\Safe Mode\Add_Safe_Mode_to_Desktop_Context_Menu.zip	
+Win 8\Search\Flyout search menu.reg	
+Win 7\Security\Deactivate the secured shell modus.reg	
+Win 10\Turn On or Off Autocorrect for Hardware Keyboard\Turn off autocorrect for hardware keyboard.reg	
+Win 8\Security\Disable CTRL+ALT+DELETE login\Disable CTRL+ALT+DELETE login.reg	
+Win 7\Disable Services and Functions\Uninstall windows apps in cascading menu in my computer.reg	
+Win 7\Printer\No sound on print finished.reg	
+Win 7\Enable Functions and Services\Enable Tools Folder Options.reg	
+Win 8\Keyboard\Disable Auto-Layout.reg	
+Win 10\Context Menu\Advanced Disk Cleanup to the Context Menu\Advanced Disk Cleanup to the Context Menu.reg	
+OS independent\Security\Uninstall IE 9 up to 11\start as admin shell.txt	
+Win 7\Context Menu Adds\Add Task Manager Option.reg	
+Win 7\Internet Explorer\Uninstall cmd.txt	
+Win 8\Windows Update\No automatically restart after updates.reg	
+OS independent\NumLock\Default.reg	
+OS independent\Fonts\Windows Default Themes Colors\Windows Default Themes Colors.reg	
+Win 7\Disable Services and Functions\Disable Health Key and Certificate Management service.reg	
+Win 10\Remove Send a Smile (Feedback) Button in IE11 Toolbar\Remove Send a Smile (Feedback) Button from IE11 Toolbar.reg	
+Win 10\Windows Update\Disable Windows Consumer Features\Enable Cloud Content.reg	
+Win 10\Cab Installer\Windows 10 CAB x64.exe	
+Win 7\Misc Tweaks\Disable Windows Key Hotkeys.reg	
+Win 7\Context Menu Adds\Add Desktop Shortcuts at Top.reg	
+Win 7\Disable Services and Functions\Remove Help and Support on Start Menu.reg	
+Win 7\Context Menu Adds\Add Run option.reg	
+Win 7\Disable Services and Functions\Disable Windows Connect Now - Config Registrar  Service.reg	
+Win 10\Info\reset_defaults_beta.txt	
+Win 7\Passwords\Do not safe .NET passwords.reg	
+OS independent\Batch\Disable Windows Feedback.bat	
+Win 10\Security\Password\Disable Password Reveal Button in Windows 10.reg	
+Win 7\Context Menu Adds\Add Change Cursor.reg	
+Win 7\Misc Tweaks\Everyone can create anyonym guests.reg	
+OS independent\Batch\regedit_full_access.bat	
+Win 7\Enable Functions and Services\Enable Notification Area Icons Settings.reg	
+Win 10\Windows Defender\Completely disable windows defender\Completely disable windows defender.reg	
+Win 7\Misc Tweaks\Notepad saves window position.reg	
+Win 8\Sceensaver\Disable Screeensaver.reg	
+Win 10\Remove Adobe Flash\Remove Adobe Flash.bat	Fixed missing DoubleQuote.
+OS independent\Batch\install_wim_tweak\13.cmd	
+Win 10\Performance\Icon Cache\Undo Fix Slow-Loading Windows Icons by Increasing the Icon Cache.reg	
+OS independent\Context Menu\Add command promt\Command Prompt.reg	
+Win 7\Misc Tweaks\Show hidden files and folders (but not hidden system files and folders.reg	
+Win 7\Disable Services and Functions\Remove Programs and Features.reg	
+Win 7\Context Menu Adds\Add Folder Options.reg	
+OS independent\Indexer\Advance Indexing\Enable advanced indexing options.reg	
+Win 7\Misc Tweaks\Shows file extensions.reg	
+Win 8\Shell\Reduce Distance to Drag Close Metro Apps and Speed Up Closing Metro Apps.reg	
+Win 7\Context Menu Adds\Remove Task Manager Option.reg	
+Win 7\HDD and SSD\Disable DiskQuota.REG	
+Win 8\GUI\Disable foreground windows flashing.reg	
+Win 8\Windows Update\Enable additional Preview Download option.reg	
+Win 10\Info\Official opt-out of Telemetry data.txt	
+Win 7\Context Menu Adds\Add advanced user acounts.reg	
+Win 8\Context Menu\Sky Drive Brand Name\Change Sky Drive Brand Name to Microsoft Drive Brand Name.reg	
+Win 8\Security\Do not allow RUN in the Registry\Do not allow RUN in the Registry.reg	
+Win 10\Re-install Windows Store\Add Windows Store.txt	
+OS independent\Batch\install_wim_tweak\Tests\Geolocation.cmd	
+Win 10\ReFS\Build 16299 x86\Build 16299 x86.reg	
+Win 10\Hide quick access icon in the navigation pane of Windows Explorer\Show quick access icon in the navigation pane of Windows Explorer.reg	
+Win 10\Context Menu\Wide Context Menus\Disable_wide_context_menus_in_Windows10.bat	
+Win 10\Explorer\Remove Status bar (bottom) in Explorer\Status bar (bottom) in Explorer.reg	
+Win 10\Windows Defender\Disable Windows Defender real-time protection\Disable Windows Defender real-time protection.reg	
+Win 7\SysProfiles\User Profile - Change Default Location.reg	
+Win 7\TakeOwnership\InstallTakeOwnership.reg	
+Win 8\TakeOwnership\InstallTakeOwnership.reg	
+OS independent\Batch\Disable Error Reporting.bat	
+Win 10\Context Menu\Disable suggestions in Start menu\Disable suggestions in Start menu.reg	
+OS independent\Batch\Disable HomeGroup.bat	
+OS independent\Security\ALSR\Turn on ALSR.reg	
+Win 10\Windows Update\Disable Windows Consumer Features\Disable Cloud Content.reg	
+Win 10\removal\win6x_registry_tweak_src_v1.4.7.zip	
+Win 10\Security\Biometrics\Disable Enhanced Anti-Spoofing.reg	
+.git\hooks\pre-receive.sample	
+OS independent\Network\Disable administrator linked connections.reg	
+Win 7\Disable Services and Functions\Disable Smart Card Removal Policy Service.reg	
+Win 8\CMD\Add open Elevated CMD here.reg	
+Win 8\Login and Shutdown\Show Desktop Background as Start Screen Background.reg	
+.git\hooks\post-update.sample	
+OS independent\Batch\Disable Sync Provider Notifications.bat	
+OS independent\Context Menu\Copy Contents to Clipboard\Add Shift+ Copy Contents to Clipboard.reg	
+Win 7\Disable Services and Functions\Disable Home Group Listener service.reg	
+Win 7\HDD and SSD\Enable autostart for different drives.REG	
+Win 10\Network\Network Location Wizard\Enable Network Location Wizard.reg	
+Win 7\HDD and SSD\Info about SSD tweaks.txt	
+Win 8\Explorer\Preview_Pane.reg	
+OS independent\Explorer\Classic Icons for ALT+TAB\Use Alt+Tab thumbnail previews.bat	
+Win 10\Remote Desktop\Turn OFF Your remote session will be disconnected\Turn OFF Your remote session will be disconnected.reg	
+Win 10\Taskbar\Enable Old Network Flyout UI\Disable Network Flyout UI in Windows 10.reg	
+Win 7\Passwords\Remove encrypted cached passwords after a while.reg	
+Win 10\Context Menu\Share with\Remove Sharing Tab from Properties Window.reg	
+OS independent\NumLock\Keep NUMLock always on.reg	
+Win 10\Power Options\Disable Power Throttling\Disable Power Throttling.reg	
+Win 7\Security\Internet Explorer\Disable unimportant error msgs.reg	
+OS independent\Batch\install_wim_tweak\4.cmd	
+OS independent\Security\Integrity checks\commands.txt	
+Win 10\Info\Software_dev2.svg.png	
+Win 7\Speedup Tweaks\Speed up shell response.reg	
+Win 7\Disable Services and Functions\Manual Microsoft .NET Framework NGEN v2.0.50727 32 bitservice.reg	
+Win 7\Misc Tweaks\Allow UntrustedHandlers.reg	
+OS independent\Windows Update\Reset-WindowsUpdate\Reset-WindowsUpdate.ps1	
+Win 7\Disable Services and Functions\Disable Encrypting File System (EFS) service.reg	
+Win 10\Network\Network Throttling Index\Disable NetworkThrottlingIndex.reg	
+Win 7\Context Menu Adds\Universal take Ownership.reg	
+Win 7\TakeOwnership\Universal take Ownership.reg	
+Win 10\Control Panel\Personalization\Add Personalization.reg	
+OS independent\Security\Firewall\Allow Notifications Popups for Domain Profile.reg	
+Win 7\Context Menu Adds\Add copy to move to.reg	
+Win 7\Disable Services and Functions\Remove Change Theme.reg	
+Win 7\Misc Tweaks\REGISTER UNREGISTER  DLL & OCX FILE.reg	
+Win 7\Context Menu Adds\EjectCD context menu.reg	
+Win 10\Security\All-in-one solution by Yasser Da Silver\Credits and source.txt	
+Win 7\Disable Services and Functions\Disable Remote Desktop Services UserMode Port Redirector Service.reg	
+Win 10\Hide Windows Insider Program in SettingsUpdate & Security\undo.reg	
+Win 8\Context Menu\File Manager in Explorer\File Manager link.reg	
+Win 8\My Computer\Remove Downloads Link from My Computer.reg	
+OS independent\Batch\Use Uncompressed JPEG Desktop Backgrounds.bat	
+OS independent\Disable Hybrid Sleep\on.txt	
+Win 7\Misc Tweaks\Hide Folder.reg	
+OS independent\Context Menu\Add Copy as Path Option in Windows\Remove Copy as Path Option.reg	
+Win 10\Info\Windows 10 services agreement - allows to remote uninstall illegal stuff.txt	
+Win 10\ReFS\Build 16299 x64\SysWOW64\uReFSv1.dll	
+Win 10\ReFS\Build 16299 x86\System32\uReFSv1.dll	
+OS independent\God Mode\Add God Mode in Desktop Context Menu.reg	
+Win 7\Context Menu Adds\Add God Mode in Desktop Context Menu.reg	
+Win 7\Enable Functions and Services\Enable Unblock Open File Security Warning.reg	
+Win 7\Disable Services and Functions\Disable Home Group Provider service.reg	
+OS independent\External Software\Sandboxie\secdel.bat	
+Win 10\Boot\Enable Fastboot\Turn_Off_Fast_Startup.bat	
+Win 8\Boot\Turn_Off_Fast_Startup.bat	
+Win 10\Context Menu\CAB Context Menu Win 10\Add_Install_to_cab_context_menu.reg	
+Win 8\CMD\Do not allow RunOnce programms.reg	
+Win 8\Windows Update\Allow client-side configuration on the intranet.reg	
+Win 10\VPN\Roaming\Turn_OFF_Allow_VPN_while_roaming.reg	
+OS independent\Batch\install_wim_tweak\README.md	
+OS independent\Security\DNS\Disable DNS Multicast.reg	
+Win 7\Speedup Tweaks\Deactivate timestamp for files.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\refs.sys	
+OS independent\External Software\Sandboxie\NoDelete-1.04.zip	
+Win 7\UAC\Do not allow Elevated Rights on network paths.reg	
+Win 10\WIM\Windows10-AIO.png	Renamed AIO.PNG to Windows10-AIO.png
+Win 10\Tiles\Clear Tile Notifications during Log on in Windows 10\Turn_Off_Clear_Tile_Notifications_during_log_on.reg	
+Win 10\Context Menu\App Mode to Context Menu to Toggle Light or Dark Theme\Add App Mode to Desktop context menu.reg	
+Win 7\Context Menu Adds\Add Copy To.reg	
+Win 10\Enable user files backup in Windows Backup\Enable user files backup in Windows Backup.reg	
+Win 8\Customize Window Border Size\Restore Default Borders.reg	
+Win 7\Disable Services and Functions\Disable Autorun for CD-ROM Drives.reg	
+Win 7\Enable Functions and Services\Enable or Disable Changing Network Locations in Windows 7.reg	
+OS independent\Batch\Remove Most Modern UI Apps.ps1	
+Win 7\Passwords\Do not safe DFܠpasswords.reg	
+OS independent\Batch\Spinesnap WU Driver Disable.bat	
+Win 8\Shell\ClassicShell.reg	
+Win 7\Disable Services and Functions\Disable Internet Connection Sharing (ICS) service.reg	
+Win 7\Speedup Tweaks\Mouse hover time 20.reg	
+OS independent\Batch\Disable P2P Networking.bat	
+OS independent\Windows Update\Windows Installer Patch cache\Windows Installer Patch cache.reg	
+Win 8\Security\Lock Account after xy denials\Lock Account after xy denials.reg	
+Win 10\Security\Log in automatically after Windows Update\Log in automatically after Windows Update.reg	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\refsv1.sys	
+Win 10\ReFS\Build 16299 x86\System32\drivers\refsv1.sys	
+Win 7\Disable Services and Functions\Disable WinHTTP Web Proxy Auto-Discovery Service.reg	
+Win 10\VPN\Metered networks\Turn_OFF_Allow_VPN_over_metered_networks.reg	
+Win 7\Enable Functions and Services\Disable Aero Peek.reg	
+.git\config	
+Win 7\Disable Services and Functions\Disable BranchCache service.reg	
+Win 7\Disable Services and Functions\Disable Parental Controls service.reg	
+Win 10\Features\Apps\Get the installed Apps List.txt	
+Win 10\ReFS\Build 15063_x64\System32\wbem\refs.mof	
+Win 10\ReFS\Build 15063_x64\SysWOW64\wbem\refs.mof	
+Win 10\ReFS\Build 15063_x86\System32\wbem\refs.mof	
+Win 10\ReFS\Build 16299 x64\System32\wbem\refs.mof	
+Win 10\ReFS\Build 16299 x64\SysWOW64\wbem\refs.mof	
+Win 10\ReFS\Build 16299 x86\System32\wbem\refs.mof	
+Win 10\Taskbar\Enable Old Network Flyout UI\Enable Windows 8 Style Network Sidebar in Windows 10.reg	
+Win 7\Context Menu Adds\Add Copy File List Clipboard.reg	
+Win 10\Disable Quick Access\Disable Quick Access.reg	
+Win 7\Context Menu Adds\Remove Event Viewer Option.reg	
+Win 8\Shell\Add Notepad to shell.reg	
+Win 10\Security\Which Data Windows 10 collects\Sources.txt	
+Win 7\Disable Services and Functions\Remove Send Feedback.reg	
+Win 10\Security Center\Hide App and Browser Control\Hide App and browser control in.reg	
+.git\hooks\pre-push.sample	
+Win 10\Windows Update\Hide single updates\Readme.txt	
+Win 7\Enable Functions and Services\Disable Run Command.reg	
+Win 10\Explorer\Turn On or Off Touch Visual Feedback\Turn ON touch visual feedback.reg	
+OS independent\Security\Obsolete\Cipher\Freak Attack vulnerability patch.reg	
+OS independent\Batch\Disable License Telemetry.bat	
+Win 7\Security\Internet Explorer\Do not allow to import or export favourites.reg	
+Win 7\Printer\Add a weblink for the print spooler assistant.reg	
+Win 10\Context Menu\Advanced Disk Cleanup to the Context Menu\extended_disk_cleanup.vbs	
+Win 10\Security Center\Hide Device Performance & Health\Show Device performance and health.reg	
+Win 10\Explorer\Automatically process video to enhance it\Turn ON Automatically process video to enhance it.reg	
+Win 10\Explorer\Don't highlight new installed apps\Don't highlight new installed apps.reg	
+Win 7\Misc Tweaks\Do not allow to remove the ZONE info.reg	
+Win 7\Context Menu Adds\Add Desktop Shortcuts at Bottom.reg	
+OS independent\Batch\Disable MRT Reporting.bat	
+.git\hooks\pre-rebase.sample	
+Win 8\Internet Explorer\FirstRunIE.reg	
+Win 8\Language\Which language should the entire OS use as default.reg	
+Win 7\Misc Tweaks\Stop caching negative responses.reg	
+Win 7\Context Menu Adds\Add VBS Run as administrator.reg	
+Win 8\Promt as Admin\elevated.reg	
+Win 8\Startup\Turn_Off_Fast_Startup.bat	
+Win 10\Context Menu\Open file location\Remove_Open_Location_context_menu.reg	
+OS independent\Batch\Disable Telemetry Features.bat	
+Win 10\ReFS\Build 16299 x64\System32\drivers\refsv1.sys	
+Win 7\UAC\Disable user configuration on Admin.reg	
+Win 8\services.msc\Disable Superfetch.reg	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\64-bit (x64)\TaskbarContextMenuTweaker.dll	
+OS independent\Context Menu\UEFI Firmware Settings\Add Boot to UEFI Firmware Settings to MIDDLE.reg	
+Win 7\Context Menu Adds\Add Run to My Computer.reg	
+Win 7\Security\Security Center\Configure the Security Center.reg	
+Win 7\Disable Services and Functions\Disable automatic reboot when BSOD.reg	
+Win 10\Performance\Icon Cache\Fix Slow-Loading Windows Icons by Increasing the Icon Cache.reg	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Disable Remote Desktop connections on PC.reg	
+OS independent\Indexer\Disable Indexer on Battery\Disable indexing when on battery power.reg	
+Win 8\Context Menu\Command Prompt with Windows PowerShell\Don't Replace Command Prompt with Windows PowerShell On the WinX Menu.reg	
+Win 7\Misc Tweaks\Deactivate the ADM-File updates.reg	
+OS independent\External Software\Java\Disable Java Auto-Update.reg	
+Win 8\OEM Key\Find Windows 8 or8.1 OEM product key.txt	
+OS independent\Realtek\Realtek high-pitch sound crackling fix.reg	
+Win 10\Clean WinSxS-Folder\or.txt	
+Win 7\Context Menu Adds\Add Turn Firewall On or Off.reg	
+Win 7\Speedup Tweaks\Speed-up Access to AVI Media Files.reg	
+OS independent\Indexer\Advance Indexing\Disable advanced indexing options.reg	
+Win 8\Shell\Faster Start Delay.reg	
+OS independent\External Software\Firefox\Disable Firefox Crash Reporter.reg	
+Win 7\UAC\UAC for signature apps.reg	
+OS independent\Batch\install_wim_tweak\10.cmd	
+Win 7\Security\Do not safe zone information in attachments.reg	
+Win 10\Taskbar\Increase taskbar transparency level\restore default taskbar transparency.reg	
+Win 10\Windows 10 Windows Media Center Installation Patch\Changelog.txt	
+OS independent\Batch\install_wim_tweak\14.cmd	
+Win 7\Context Menu Adds\Add creation of Batch .cmd .reg	
+Win 7\Context Menu Adds\Add new CMD file.reg	
+Win 7\Enable Functions and Services\Registered Owner Classic Registry Editor Example.reg	
+Win 10\Security\KB remover\RemoveuselessKBWindows10.cmd	
+Win 7\Context Menu Adds\Add Change Wallpaper.reg	
+Win 8\Sceensaver\Do not allow login screensaver.reg	
+Win 10\Context Menu\Wide Context Menus\Enable_wide_context_menus_in_Windows10.bat	
+OS independent\External Software\Internet Download Manager\Unregister.IDM.reg	
+Win 10\Customize Details of Shortcut Tooltips\Show_custom_shortcut_tooltips.reg	
+Win 8\Network\Timeout for slower network connections.reg	
+Win 7\Context Menu Adds\Add Register AX.reg	
+Win 7\HDD and SSD\Disable Cache.REG	
+Win 10\Power Options\Maximum Processor Frequency\Add Maximum processor frequency to Power Options.reg	
+OS independent\Batch\install_wim_tweak\1.cmd	
+OS independent\Recycle Bin\Enhanced Recycle Bin Menu\ERBM.txt	
+Win 8\Tips\DisableAC.reg	
+OS independent\Batch\install_wim_tweak\8.cmd	
+Win 7\Passwords\Password need to be changed every xy days.reg	
+Win 10\Enable user files backup in Windows Backup\Disable user files backup in Windows Backup.reg	
+OS independent\External Software\MPC-HC\Clean all MPC-HC registry stuff.reg	
+Win 8\Context Menu\Start Menu Pin\Remove Pin to Start Menu.reg	
+Win 8\Windows Update\How long should WUS wait after the installation to restart.reg	
+OS independent\Batch\Disable Automatic Maintenance.bat	
+OS independent\Performance\Processor Scheduling\Programs_processor_scheduling.reg	
+OS independent\External Software\UltraUXpatcher\In case you have trouble patching do this.txt	
+Win 7\Context Menu Adds\Add Task Manager.reg	
+OS independent\Delete files faster\Fast Deleting files.reg	
+Win 7\Disable Services and Functions\Remove Appearance.reg	
+Win 10\Power Options\Disable Power Throttling\Enable Power Throttling.reg	
+Win 8\Context Menu\Select\Add cascading select to context menu.reg	
+Win 10\Turn On or Off Text Suggestions for Hardware Keyboard\Turn off show text suggestions for hardware keyboard.reg	
+Win 10\Security\Remove SmartCardRoot certificates\Remove SmartCardRoot certificates.reg	
+Win 7\Recyle Bin\Enable Rename in Recycle Bin.reg	
+Win 7\Context Menu Adds\Add register  unregister to the context menu for .dll files.reg	
+OS independent\Security\Obsolete\EMET\us-16-Weston-Windows-10-Mitigation-Improvements.pdf	
+OS independent\Batch\Disable Automatic Updates.bat	
+Win 7\Context Menu Adds\Add System Shortcuts.reg	
+Win 7\Misc Tweaks\Logon screen Text noshadow.reg	
+Win 10\ReFS\Build 15063_x86\Build 15063_x86.reg	
+OS independent\Batch\install_wim_tweak\Tests\Miracast.cmd	
+OS independent\External Software\Kaspersky\Disable daily trial notification 2016.reg	
+Win 10\Cortana\Uninstall Cortana\Uninstall.zip	
+Win 10\Security\Fonts\Untrusted fonts blocking.reg	
+.git\HEAD	
+Win 8\OEM Page\Change OEM Properties.reg	
+Win 10\Mobile w10\HomeFolderMobile.reg	
+OS independent\Batch\Maintenance.bat	
+Win 8\CMD\Admin Command Prompt here.reg	
+Win 10\Internet Explorer\Hide Search box in  Internet Explorer 11\Show Search box in Internet Explorer 11.reg	
+Win 10\Taskbar\Enable Old Notification Center\Enable Old Notification Center in Windows 10.reg	
+OS independent\Context Menu\Copy Contents to Clipboard\Remove Copy Contents to Clipboard.reg	
+Win 7\Context Menu Adds\Empty RecycleBin right click.reg	
+Win 10\UAC\Disable Modern UAC Prompt and Credential UI in Windows 10.reg	
+Win 10\No Drives in Send To Menu\No Drives in Send To Menu.reg	
+OS independent\Safe Mode\BootSafe.exe	
+Win 8\Windows Update\Include recommed updates.reg	
+Win 10\Tiles\Enable Old Network Flyout UI in Windows 10\Restore New Network Flyout UI in Windows 10.reg	
+Win 10\Context Menu\Remove File Explorer Default Context Menu\Add File Explorer context menu.reg	
+Win 10\Explorer\Remove Games\Remove Games.reg	
+Win 7\DreamScene\EnableDreamScenes by MDL Forums.zip	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Force Always Disable Remote Desktop connections.reg	
+Win 7\Speedup Tweaks\maximum simultaneous downloads for IE to 20.reg	
+Win 7\Disable Services and Functions\optimized.reg	
+Win 7\Context Menu Adds\Add Encrypt-Decrypt.reg	
+Win 10\Shell\Remove Quick Access\undo.reg	
+Win 8\Security\Do not list last username on login\Do not list last username on login.reg	
+.git\hooks\update.sample	
+Win 10\Windows Update\UUP\Unified Update Platform (UUP) on switch to UUP.reg	
+Win 7\Context Menu Adds\Take Ownership with icon.reg	
+Win 7\TakeOwnership\Take Ownership with icon.reg	
+Win 8\TakeOwnership\Take Ownership with icon.reg	
+OS independent\External Software\EMET\EMET v5.2.reg	
+Win 10\Explorer\Turn off Bluetooth Notification Area Icon\Turn off Bluetooth notification area icon.bat	
+Win 7\Disable Services and Functions\Remove Power Options.reg	
+Win 8\Internet Explorer\Unblock downloads.reg	
+OS independent\Batch\Disable Network Connectivity Testing.bat	
+Win 10\Info\THE TRUTH !.txt	
+Win 10\ReFS\Build 15063_x64\Build 15063_x64.reg	
+Win 7\Context Menu Adds\Window Switcher.reg	
+OS independent\Batch\cleanup\cleanmgr +shutdown.bat	
+Win 7\Security\If an Administrator attempts a protected action - Silently Succeed.reg	
+Win 8\Fonts\Custom fonts.reg	
+Win 10\Explorer\Remove Previous Version in Explorer Tab\Remove Previous Version in Explorer Tab.reg	
+Win 10\Control Panel\Classic Personalization\Remove Classic Personlization.reg	
+Win 10\Network\Add Network shortcut to This PC\Add Network shortcut to This PC.reg	
+Win 7\Speedup Tweaks\Disable kernel paging Optimize Core System Performance.reg	
+OS independent\Explorer\Classic Icons for ALT+TAB\Use Alt+Tab classic icons.bat	
+OS independent\God Mode\Add God Mode in Top of Desktop Context Menu.reg	
+Win 7\Context Menu Adds\Add God Mode in Top of Desktop Context Menu.reg	
+OS independent\Batch\install_wim_tweak\12.cmd	
+Win 10\Explorer\Change Notepad default font\Change Notepad default font.reg	
+Win 10\Explorer\Allow video to play at a lower resolution\Turn ON-Allow video to play at a lower resolution.reg	
+Win 7\Context Menu Adds\Add Manage Option.reg	
+Win 7\Disable Services and Functions\Remove Change Wallpaper.reg	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\32-bit (x86)\Load.bat	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\64-bit (x64)\Load.bat	
+Win 7\Context Menu Adds\Add Advanced System Properties to My Computer.reg	
+Win 10\Security\Telemetry by MS official link\DontReportInfectionInformation.reg	
+Win 10\Edge\Enable Extensions in Microsoft Edge in Windows 10.reg	
+Win 8\Internet Explorer\Do not allow Internet Explorer sync.reg	
+Win 10\Windows Update\Disables Insider Preview Builds\Disables Insider Preview Builds.reg	
+Win 8\Security\Warning.txt	
+Win 7\Context Menu Adds\Remove Services Option.reg	
+.git\hooks\commit-msg.sample	
+Win 7\Misc Tweaks\Clear Search History.reg	
+Win 7\Disable Services and Functions\Disable screensavers.reg	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\32-bit (x86)\TaskbarContextMenuTweaker.dll	
+OS independent\External Software\DXTool\DXTool BETA x64.exe	
+Win 8\Windows Media Player\Nuke Windows Media Player.reg	
+Win 7\HDD and SSD\Clean autoplay list.REG	
+Win 10\Security\SmartScreen\Smartscreen hardening.reg	
+OS independent\Change Owner and Support Info\Change Owner and Support Info.reg	
+Win 7\UAC\UAc for integrated Admin account.reg	
+Win 7\Context Menu Adds\Add Change Screen Saver.reg	
+OS independent\Context Menu\View Owner\Add View Owner.reg	
+Win 7\Disable Services and Functions\Manual Application Information.reg	
+Win 7\Disable Services and Functions\ManualApplication Information service.reg	
+Win 7\Misc Tweaks\Do not allow Windows to turn off Network Adapters.reg	
+Win 7\Context Menu Adds\Add Network Connections.reg	
+OS independent\Context Menu\Copy and move to\Remove Copy Move-To.reg	
+Win 10\Context Menu\Old Control panel\Old Control Panel (with icon) to right-click context menu (Desktop).reg	
+Win 8\Login and Shutdown\Disable displaying on shutdown in the welcome screen.reg	
+Win 7\Context Menu Adds\Remove VBS Run as administrator.reg	
+Win 7\Disable Services and Functions\Remove Task Scheduler.reg	
+Win 10\Taskbar\Enable Old Network Flyout UI\Restore New Network Flyout UI in Windows 10.reg	
+Win 7\Security\Configure Windows script host shell.reg	
+Win 8\Customize Window Border Size\Get Thin Borders.reg	
+Win 8\Keyboard\Change login keyboard layout e.g. german.reg	
+Win 10\Remove OneDrive from Navigation Panel\Remove OneDrive from Navigation Panel.reg	
+Win 10\Windows Update\RS 3 Builds\Active_development_of_Windows.reg	
+Win 7\Disable Services and Functions\Disable usb message This device can perform faster.reg	
+Win 10\Security\Telemetry by MS official link\AdvertisingInfo.reg	
+Win 10\Classic Appearance Settings for Desktop Cascade under Right Click\Undo.reg	
+OS independent\Batch\install_wim_tweak\9.cmd	
+Win 7\Context Menu Adds\Stop or start Aero.reg	
+Win 7\Context Menu Adds\Stop start aero.reg	
+Win 7\Disable Services and Functions\Restart Aero.reg	
+OS independent\File system\NTFS File encryption\Disable NTFS file encryption.reg	
+Win 7\Enable Functions and Services\Enable Statusbar in Notepad.reg	
+Win 8\UAC\Enable Metro Apps to Work on In-Built Administrator Account with UAC Prompt Disabled.reg	
+Win 10\Windows 10 Windows Media Center Installation Patch\Download.txt	Renamed Download.txt to Download-Windows-MediaCenter-Notes.txt
+Win 10\Turn On or Off Text Suggestions for Hardware Keyboard\Turn on show text suggestions for hardware keyboard.reg	
+Win 10\Shell\Persistent Action Center\Persistant Action Center.reg	
+Win 10\Shell\Persistent Action Center\undo.reg	
+Win 7\Context Menu Adds\Remove Search Option.reg	
+Win 10\Sound\Enable New Tray Clock and Calendar\Enable New Tray Clock and Calendar in Windows 10.reg	
+Win 7\Context Menu Adds\Add Run as Different User.reg	
+Win 7\Disable Services and Functions\Remove Administrative Tools..reg	
+Win 10\Context Menu\Remove Previous Versions Context Menu Option and Tab\Restore Previous Versions Tab in Properties Window.reg	
+Win 7\Context Menu Adds\Add Fonts.reg	
+Win 7\Internet Explorer\Turn Off Display all websites in IE Compatibility View.reg	
+Win 10\ReFS\Add\Add_AutorecoverMOFsReFSv1_Only.vbs	
+Win 10\ReFS\Add_AutorecoverMOFsReFSv1_Only.vbs	
+OS independent\External Software\RegConvert\RegConvert.exe	
+Win 10\LockScreen\Enable PIN reset on sign-in screen for Microsoft accounts\Enable PIN reset on sign-in screen for Microsoft accounts.reg	
+Win 10\Windows Update\Get kbs or esd via powershell\Guide.txt	
+OS independent\Batch\Disable Windows Defender.bat	
+OS independent\External Software\Intel RST\DisableAN.reg	
+Win 7\Security\Do not allow removable storage devices.reg	
+Win 8\Explorer\BackColor.reg	
+Win 10\Power Options\Maximum Processor Frequency\Remove Maximum processor frequency from Power Options.reg	
+Win 10\W10 Telemetry batch remover\Overview\Configure Windows 10 devices to stop data flow to Microsoft.png	
+Win 8\Explorer\AddLibrariesToNavi.reg	
+Win 7\Disable Services and Functions\Manual SSDP Discovery.reg	
+OS independent\Windows Power Management\PowerSettingsExplorer.exe	
+Win 7\Context Menu Adds\Add Internet Options.reg	
+Win 7\Enable Functions and Services\Disable Unblock Open File Security Warning.reg	
+Win 7\Disable Services and Functions\Disable Remote Desktop Services Service.reg	
+Win 8\Libraries\Reassemble 'Libraries' above This PC in the navigation panel.reg	
+OS independent\Security\Uninstall IE 9 up to 11\get package list via.txt	
+Win 10\Explorer\Disable Fast User Switching\Disable Fast User Switching.bat	
+Win 10\ReFS\Allow\AllowFormatNonMirror.reg	
+Win 10\Remote Desktop\Turn OFF Your remote session will be disconnected\Turn ON Your remote_session will be disconnected.reg	
+Win 7\Disable Services and Functions\Disable Hibernate.reg	
+OS independent\External Software\Local Group Policy Editor for every Windows Version\Source.txt	
+Win 10\Performance\Runtime Broker\Disable Runtime Broker.reg	
+OS independent\File system\NTFS file compression\Disable NTFS file compression.reg	
+Win 10\Remote Desktop\Disable Always Prompt for Password upon Remote Desktop Connection\Disable Always prompt for password upon RDC to this PC.reg	
+OS independent\Batch\Windows Priority game tweak.bat	
+Win 7\Misc Tweaks\Members in a security zone can't change any settings.reg	
+Win 10\Theme\Aero Glass\Aero Glass for Windows 10 RS2 1.5.5 x64 RePack by zeUs.H.exe	
+OS independent\Explorer\Remove windows store taskbar\Remove windows store taskbar.reg	
+Win 7\Context Menu Adds\Add Move To.reg	
+Win 8\Notification Center\Turn Notification Center Icon OnOff and change position.reg	
+Win 7\Misc Tweaks\Edit this to add custom Oem Info.reg	
+Win 7\Disable Services and Functions\get rid of the Windows Mail splash screen.reg	
+Win 10\Action Center\Disable Quick Action buttons in Action Center.reg	
+Win 7\Disable Services and Functions\Disable window animations on minimize maximize.reg	
+Win 7\Misc Tweaks\Open HTA files (used for WPI) with MSHTA.EXE.reg	
+Win 8\Windows Update\Show install and restart menu.reg	
+Win 10\Windows Update\Driver Behaviour Policy\driver.png	
+Win 8\Tips\Turn off The Let Me Teach You About Metro Tutorial Tips.reg	
+Win 7\Misc Tweaks\Change the Clock to 24 Hour time format.reg	
+Win 7\Security\Security Center\Activate Security Center for Domain PC's.reg	
+Win 10\Taskbar\Increase taskbar transparency level\more transparent taskbar.reg	
+Win 8\Security\Disable automatically BSOD restart\Disable automatically BSOD restart.reg	
+OS independent\Batch\Enable Performance Counters (Default).cmd	
+Win 8\Apps\List Desktop Apps First in the Apps View when it's Sorted by Category.reg	
+Win 8\Shell\New file type layout.reg	
+Win 10\Security Center\Hide Virus and Threat Protection\Show Virus and threat protection.reg	
+Win 7\Passwords\Force unlocked login.reg	
+Win 8\Security\Force unlock login even the account is already locked\Force unlock login even the account is already locked.reg	
+Win 7\Context Menu Adds\Remove Admin Auto Hotkey.reg	
+Win 7\Context Menu Adds\Add Shutdown to right click of MY Computer.reg	
+Win 7\Disable Services and Functions\Remove Change Regional Settings.reg	
+Win 10\Turn On or Off Autocorrect for Hardware Keyboard\Turn on autocorrect for hardware keyboard.reg	
+OS independent\Search Engine Shortcut - Create\google.bat	
+Win 10\Explorer\Add GodMode into My Computer\Add GodMode into My Computer.reg	
+Win 10\Security\Telemetry by MS official link\HttpAcceptLanguageOptOut.reg	
+Win 8\Security\Log all Kerberos logins under Events\Log all Kerberos logins under Events.reg	
+OS independent\External Software\Sandboxie\SboxieUtil.zip	
+Win 10\Remove my folders This PC\x64.reg	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Force Always Enable Remote Desktop connections.reg	
+Win 7\Misc Tweaks\Default Value Aero Peek.reg	
+OS independent\Batch\show_hidden_driver_corpses.bat	
+Win 7\Sound\Disable Print Error sound.REG	
+Win 8\Context Menu\Select\Select all files in cascading context menu.reg	
+Win 7\Context Menu Adds\Remove Control Panel Option.reg	
+Win 7\Context Menu Adds\Remove MSConfig Option.reg	
+OS independent\Security\BCDEdit\DEP.txt	
+Win 7\Disable Services and Functions\Disable Disk Defragmenter service.reg	
+Win 7\Disable Services and Functions\Disable Peer Name Resolution Protocol service.reg	
+OS independent\Batch\Change IP Address.bat	
+Win 7\Internet Explorer\Disable Welcome Screen.reg	
+Win 7\Context Menu Adds\Add Appearance.reg	
+Win 8\My Computer\Remove Music Link from My Computer.reg	
+Win 7\Passwords\Do not allow auto completation of passwords.reg	
+Win 10\ReFS\AllowFormatNonMirror.reg	
+Win 7\Misc Tweaks\Do not allow to run CMD.reg	
+Win 10\Context Menu\Add Scan with Windows Defender to Explorer right click context menu\Remove-Windows-Defender-To-Folder-Context-Menu.reg	
+Win 8\Shell\Remove-Windows-Defender-To-Folder-Context-Menu.reg	
+OS independent\Batch\install_wim_tweak\3.cmd	
+OS independent\Batch\Services.bat	
+Win 10\Disable Maintenance\Enable Maintenance.reg	
+Win 10\Explorer\Drag and Drop behavior\Set_Drag_and_Drop_to_Create_Shortcut_by_default.reg	
+Win 7\HDD and SSD\Start and backup disable.REG	
+Win 7\Context Menu Adds\Add Desktop Icons Settings.reg	
+Win 10\Windows Defender\Always TrayIcon\Windows Defender Icon.reg	
+Win 8\GUI\Apply Thin Windows Borders.reg	
+Win 10\W10 Telemetry batch remover\Batch\Disable win10tracking.bat	
+Win 7\Disable Services and Functions\Disable Autorun for Removable Drives.reg	
+Win 10\Windows Update\How do I reset Windows Update components\See here.txt	
+Win 7\UAC\Disable UAC ConsentPromptBehaviorAdmin.reg	
+Win 7\Context Menu Adds\Remove Copy Contents To Clipboard.reg	
+Win 10\Windows Defender\Supress notifications\Supress notifications.reg	
+Win 10\Reduce Title Bar\Title Bar Reducer.reg	
+Win 7\Disable Services and Functions\Turn Off Taskbar Thumbnail Live Previews.reg	
+Win 10\Disable Create a system image\Enable Create a system image.reg	
+Win 10\Network\Network Throttling Index\network.png	
+Win 7\Enable Functions and Services\Disable Changing Network Locations in Windows 7.reg	
+Win 7\Security\Enable secured login.reg	
+OS independent\Security\Obsolete\Schannel\kb293781fix.reg	
+Win 8\GUI\Change LogonUI and Startscreen Default Background Color.reg	
+Win 7\Context Menu Adds\Add Control Panel to right click of MY Computer.reg	
+Win 10\Windows Store\Store App Is Not Opening Fix\run as shell admin.txt	Has the Non-ASCII DoubleQuote charachter. ““ ‘‘
+Win 8\Internet Explorer\IE 11 Ram Drive - Cache.reg	
+Win 10\Security\Telemetry by MS official link\EnableWebContentEvaluation.reg	
+OS independent\External Software\Sandboxie\SandboxToys.zip	
+OS independent\Batch\Prevent MRT.bat	
+OS independent\External Software\Local Group Policy Editor for every Windows Version\Policy Plus.exe	
+Win 7\Passwords\Password protection for screensaver.reg	
+OS independent\Security\Root certificates\Rootsupd_Fix.reg	
+Win 7\Context Menu Adds\Add Change Theme.reg	
+Win 10\Remove Adobe Flash\mms.cfg	
+Win 10\Disable Startup Sound\Disable Startup Sound.reg	
+Win 10\Taskbar\Enable Blur in Taskbar and Start Menu\Enable Blur in Taskbar and Start Menu.reg	
+OS independent\Security\Firewall\Allow Only Core Networking and block Windows Update.reg	
+OS independent\Security\Wifi\DisableWifi Sense.reg	
+Win 7\Speedup Tweaks\Increase boot time - prefetching.reg	
+Win 10\Explorer\Disable Ads In Windows 10 File Explorer\Disable Ads In Windows 10 File Explorer.reg	
+Win 7\Disable Services and Functions\Disable WWAN AutoConfig Service.reg	
+Win 7\Misc Tweaks\Secure Delete Outlook attachments after they are deleted.reg	
+Win 8\Windows Update\Disable wus background processes.reg	
+Win 10\Performance\Zero Startup Delay\Zero Startup Delay.reg	
+OS independent\Audio Timer Monitor\AudioTimer.exe	
+Win 10\Security\All-in-one solution by Yasser Da Silver\Toggle Tweaker.bat	
+Win 7\Enable Functions and Services\Restore Always Select Current Users.reg	
+Win 7\Context Menu Adds\Add Classic System Properties Option.reg	
+Win 7\Misc Tweaks\Unhide Folder.reg	
+OS independent\External Software\Unbound\service.conf	
+Win 7\Speedup Tweaks\Kill hung services after 5 seconds.reg	
+Win 10\Change the behavior of single clicks on the taskbar\Change the behavior of single clicks on the taskbar.reg	
+Win 7\Disable Services and Functions\systemdefault.reg	
+Win 10\BSOD Minidump\Create_Kernel_memory_dump_on_BSOD.reg	
+Win 10\Context Menu\Context Menu Items Missing when more than 15 Selected in Windows\Context Menu Items Missing when more than 15 Selected in Windows.reg	
+OS independent\DISM\ComponentCleanup.cmd	
+Win 7\Enable Functions and Services\Restore Default Autorun Functionality.reg	
+OS independent\Recycle Bin\Enhanced Recycle Bin Menu\ERBM+.reg	
+Win 7\Disable Services and Functions\Remove Security Center.reg	
+Win 8\Security\Do not allow RUN executatation for programs stored in there\Do not allow RUN executatation for programs stored in there.reg	
+OS independent\Windows Firewall\Disable Windows Firewall.reg	
+Win 7\Context Menu Adds\Add Programs and Features.reg	
+.git\refs\remotes\origin\HEAD	
+Win 7\Disable Services and Functions\Manual Protected Storage.reg	
+Win 10\Features\Calculator\win32calc_14393_x86.zip	
+Win 10\Remove Microsoft Edge Browser\Readme.txt	Renamed to Remove-Microsoft-Edge-Browser-Readme.txt
+OS independent\Capslock\Disable Capslock\Disable capslock.reg	
+Win 7\Disable Services and Functions\Disable Remote Registry Service.reg	
+Win 7\Misc Tweaks\RestoreToolbarsInTaskbar.reg	
+OS independent\Batch\Open Pictures With Windows Photo Viewer.bat	
+Win 10\Explorer\Open Pictures With Windows Photo Viewer\Open Pictures With Windows Photo Viewer.cmd	
+Win 10\Security\Anti-Telemetry Firewall rules\rules.ps1	
+Win 7\Misc Tweaks\Use Small Icons.reg	
+Win 8\My Computer\Remove Desktop Link from My Computer.reg	
+Win 7\Misc Tweaks\give your self permission to modify and all.reg	
+Win 8\Context Menu\Choose Power Plan\Add_Choose_Power_Plan_to_Desktop_Context_Menu.reg	
+Win 10\LockScreen\Enable New Login Screen\Restore Default Login Screen in Windows 10.reg	
+Win 7\Disable Services and Functions\Remove Change Cursor.reg	
+Win 7\Context Menu Adds\Add Recycle Bin to My Computer.reg	
+Win 10\Icons\Default Windows 10 to Align Icons Text to Center.reg	
+Win 7\Misc Tweaks\Restore Libraries Default Settings.reg	
+Win 7\Context Menu Adds\Add Hide File.reg	
+Win 10\Context Menu\Share with\Restore Share With Option in Context Menu.reg	
+.git\refs\heads\master	
+Win 7\Context Menu Adds\Remove Device Manager Option.reg	
+OS independent\Security\Obsolete\EMET\Source.txt	
+Win 7\UAC\Deactivate UAC for the standard user.reg	
+Win 7\Context Menu Adds\add open with notepad.reg	
+Win 7\Disable Services and Functions\Disable Windows Windows Defender Service.reg	
+Win 7\Disable Services and Functions\Remove Internet Options.reg	
+Win 7\Explorer\Print build number on desktop.reg	
+Win 8\Apps\Apps Store Feature disable.reg	
+Win 10\Windows Update\Notify on Windows Updates\Notify on Windows Updates.png	
+Win 10\ReFS\Build 16299 x64\System32\drivers\en-US\refsv1.sys.mui	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\en-US\refsv1.sys.mui	
+Win 10\ReFS\Build 16299 x86\System32\drivers\en-US\refsv1.sys.mui	
+Win 10\Enable New Login Screen\Enable New Login Screen in Windows 10.reg	
+Win 8\Explorer\Pane_Off.reg	
+Win 7\Disable Services and Functions\Remove Libraries Icon from Windows 7 Explorer Only.reg	
+OS independent\Security\DNS\Change how OS checks the connectivity (default).reg	
+Win 8\Windows Update\Other Microsoft Updates enabled.reg	
+OS independent\Batch\Disable SmartScreen.bat	
+OS independent\Security\WPAD\wpad additional.reg	
+Win 10\Security\RunAsSmartscreen\RunAsSmartscreen.reg	
+Win 8\Security\RunAsSmartscreen\RunAsSmartscreen.reg	
+Win 7\Passwords\Passwords must contain some alpha numeric chars.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\refsv1.sys	
+Win 8\My Computer\Remove Pictures Link from My Computer.reg	
+Win 7\Disable Services and Functions\extreme-settings.reg	
+Win 7\Disable Services and Functions\Disable Human Interface Device Access service.reg	
+Win 7\Disable Services and Functions\Disable Web Services.reg	
+Win 10\Context Menu\Remove Troubleshoot Compatibility Context Menu\Remove Troubleshoot Compatibility context menu.reg	
+Win 7\Disable Services and Functions\Disable Routing and Remote Access Service.reg	
+Win 7\Printer\No print spooler popup.reg	
+Win 8\Security\Do not allow to safe the current configuration\Do not allow to safe the current configuration.reg	
+Win 10\Explorer\Disable Online Tips and Help for Settings App\Disable online tips and help for Settings app.reg	
+Win 7\Misc Tweaks\Typing Long File Names In DOS.reg	
+OS independent\Batch\install_wim_tweak\install_wim_tweak.exe	
+Win 10\Sound\Enable Old Volume Control Slider UI\Restore Default Volume Control Slider UI in Windows 10.reg	
+Win 10\Windows Update\Update archives\Update archive links.txt	
+Win 10\Security\Telemetry by MS official link\TIPC.reg	
+Win 10\Windows Defender\Completely disable windows defender\Undo.reg	
+Win 10\Context Menu\Remove Pin to Start\Remove Pin to Start context menu.reg	
+Win 7\HDD and SSD\Disable CD Audio.REG	
+Win 7\Misc Tweaks\Unhide File.reg	
+Win 10\Context Menu\Screen Resolution\Remove Screen resolution from Desktop context menu.reg	
+Win 10\Windows Update\RS 3 Builds\Skip_ahead_to_the_next_Windows_release.reg	
+Win 7\Disable Services and Functions\Disable Auto Play.reg	
+.git\hooks\prepare-commit-msg.sample	
+Win 10\Features\Search\Disable WEBSearch.reg	
+OS independent\External Software\DNSCrypt\DNSCrypt and Unbound.txt	
+Win 10\Official Documents\Windows 10 ADMX spreadsheet.xlsx	
+Win 8\Explorer\RemoveFoldersMyComp.reg	
+Win 7\Context Menu Adds\Add Printers to My Computer.reg	
+Win 7\HDD and SSD\Disable warning if HDD full.REG	
+Win 10\Context Menu\Burn disc image\Remove_Burn_disc_image_context_menu_for_ISO_IMG.reg	
+Win 10\Windows Update\Force 1607 update\Force 1607.reg	
+Win 7\Misc Tweaks\Hide File.reg	
+Win 10\Remove Silverlight\Remove Silverlight.cmd	
+OS independent\Batch\Disable Xbox Bar.bat	
+OS independent\Security\Fake Bluescreen\Fake Bluescreen fix.reg	
+OS independent\External Software\Sandboxie\Sandboxie Trial Reseter.reg	
+Win 7\Speedup Tweaks\Desktop and Shutdown.reg	
+Win 10\Energy profiles\Exctrlst.exe	
+Win 7\Context Menu Adds\Add Flip 3D to My Computer.reg	
+OS independent\Batch\CHEF-KOCH's Hosts File.ps1	
+Win 10\Tiles\Enable Old Notification Center in Windows 10\Enable Old Notification Center in Windows 10.reg	
+Win 7\Disable Services and Functions\Remove Folder Options.reg	
+OS independent\Batch\Disable Hinbernate.bat	
+Win 7\Security\Restrict Anonymous User.reg	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\refs.sys	
+Win 10\ReFS\Build 16299 x86\System32\drivers\refs.sys	
+Win 7\Context Menu Adds\Add Windows Apps at Top.reg	
+Win 10\Remove Send a Smile (Feedback) Button in IE11 Toolbar\Restore Send a Smile (Feedback) Button in IE11 Toolbar.reg	
+Win 7\Misc Tweaks\Show the full path in minimized explorer windows.reg	
+Win 10\ReFS\Add\ReFS_Volume_Version_Info_Command.txt	
+Win 10\ReFS\ReFS_Volume_Version_Info_Command.txt	
+Win 10\Context Menu\Choose Power Plan\Remove_Choose_Power_Plan_from_Desktop_Context_Menu.reg	
+Win 7\Disable Services and Functions\Manual Peer Networking Identity Manager.reg	
+Win 7\Speedup Tweaks\Increase the show network folder time.reg	
+Win 8\Network\Increase the time to show network filenames.reg	
+Win 10\Microsoft Edge security hardening\Improve the security.txt	
+Win 10\Disable Create a system image\Disable Create a system image.reg	
+Win 7\Disable Services and Functions\Manual HomeGroup Provider.reg	
+Win 7\Disable Services and Functions\Disable Application Management service.reg	
+OS independent\God Mode\Add God Mode in Bottom of Desktop Context Menu.reg	
+Win 7\Context Menu Adds\Add God Mode in Bottom of Desktop Context Menu.reg	
+OS independent\Batch\Disable Tasks.bat	
+Win 10\Explorer\Expand to current folder in the left panel in Explorer\Expand to current folder in the left panel in Explorer.reg	
+OS independent\Security\WEBRTC browser IP leak fix\webrtc_firewall.bat	
+Win 7\Disable Services and Functions\Remove Change Screen Saver.reg	
+OS independent\Security\Make USB devices read only\USB devices read-only.reg	
+Win 10\Windows 10 Windows Media Center Installation Patch\Readme.txt	
+Win 10\LockScreen\Disable LockScreen\Disable Lock-Screen.reg	
+Win 10\Context Menu\Screen Resolution\Add Screen resolution to Desktop context menu.reg	
+OS independent\Icon Cache\Rebuild_Icon_Cache.bat	
+Win 10\Internet Explorer\Hide Search box in  Internet Explorer 11\Hide Search box in Internet Explorer 11.reg	
+OS independent\Context Menu\UEFI Firmware Settings\Add Boot to UEFI Firmware Settings to TOP.reg	
+Win 7\Disable Services and Functions\turn off start menu baloon tips.reg	
+Win 10\Security\Biometrics\Enhanced Anti-Spoofing.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\cs-CZ\refs.sys.mui	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\cs-CZ\refs.sys.mui	
+Win 10\ReFS\Build 15063_x86\System32\drivers\cs-CZ\refs.sys.mui	
+Win 10\Context Menu\Add Scan with Windows Defender to Explorer right click context menu\Add Scan with Windows Defender to Explorer right click context menu.reg	
+OS independent\External Software\LibreOffice\Enable OpenGL.reg	
+OS independent\External Software\Sandboxie\RecoverNoScript.vbs	
+Win 10\Taskmanager\en-US\taskmgr_w10-rs2_modern_x64.exe.mui	
+Win 10\Taskmanager\en-US\taskmgr_w10-rs2_modern_x86.exe.mui	
+Win 10\Features\Disable Preview Builds\Disable_Windows_10_Insider_Program_Settings.reg	
+Win 7\Info\Change Size of hiberfil.sys File.txt	
+Win 10\Features\Disable OneDrive\Readme.txt	
+Win 10\Cortana\Disable Cortana Floating Search Bar\Disable Cortana floating Search bar.reg	
+Win 8\Shell\Classic Control Panel.reg	
+Win 10\Context Menu\Remove Manage\Add Manage to This-PC.reg	
+Win 10\Security\Telemetry by MS official link\AutoConnectAllowedOEM.reg	
+OS independent\Batch\Enable_Run_Command.bat	
+OS independent\Batch\fix broken services.msc.bat	
+OS independent\Windows Defender\Defender_Uninstaller.exe	
+Win 10\Make title bar smaller\before.png	
+Win 10\Theme\Disable Aero with Blur\Enable Aero with Blur.reg	Typo error fixed.
+Win 10\ReFS\Build 16299 x64\System32\drivers\cs-CZ\refs.sys.mui	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\cs-CZ\refs.sys.mui	
+Win 10\ReFS\Build 16299 x86\System32\drivers\cs-CZ\refs.sys.mui	
+Win 7\Disable Services and Functions\Disable Microsoft iSCSI Initiator Service service.reg	
+Win 7\Disable Services and Functions\Manual Network List Service.reg	
+Win 7\Context Menu Adds\Add System Tools at Top.reg	
+Win 7\Misc Tweaks\Default Windows hover.reg	
+Win 7\Disable Services and Functions\Manual Peer Networking Grouping.reg	
+OS independent\God Mode\Readme.txt	
+OS independent\Batch\Show All Folders in File Explorer Pane.bat	
+Win 10\Theme\Theme change\Prevent users to change or save theme.reg	
+Win 7\Security\Internet Explorer\Internet Explorer configuration example.reg	
+Win 10\Enable Windows Spotlight\Neues Textdokument.txt	
+Win 7\Disable Services and Functions\Disable Tool Tips.reg	
+OS independent\Context Menu\Copy Contents to Clipboard\Add Copy Contents to Clipboard.reg	
+OS independent\Batch\install_wim_tweak\Tests\Windows Defender.cmd	
+Win 7\Printer\Change print spooling priority.reg	
+OS independent\External Software\Kaspersky\Disable daily trial notification 2019.reg	
+Win 7\Speedup Tweaks\Do not re-trace depcreated links.reg	
+Win 10\Explorer\Numerical Sorting in File Explorer\Enable numerical sorting.reg	
+Win 7\Disable Services and Functions\Remove Turn Firewall On Off.reg	
+Win 7\Misc Tweaks\Only Remove Libraries Icon from Windows 7 Explorer.reg	
+Win 7\Sound\Avoid audiorecorders.REG	
+.git\packed-refs	
+OS independent\Batch\Disable Windows Tips.bat	
+Win 7\Context Menu Adds\Add Security Center.reg	
+Win 10\ReFS\Build 15063_x64\System32\wbem\refsv1.mof	
+Win 10\ReFS\Build 15063_x64\SysWOW64\wbem\refsv1.mof	
+Win 10\ReFS\Build 15063_x86\System32\wbem\refsv1.mof	
+Win 10\ReFS\Build 16299 x64\System32\wbem\refsv1.mof	
+Win 10\ReFS\Build 16299 x64\SysWOW64\wbem\refsv1.mof	
+Win 10\ReFS\Build 16299 x86\System32\wbem\refsv1.mof	
+Win 7\HDD and SSD\Enables LastAliveStamp.REG	
+Win 10\W10 Telemetry batch remover\Anti telemetry Hosts\HOSTS	
+Win 7\Internet Explorer\Disable Internet Explorer end of life upgrade notification update.reg	
+Win 8\Internet Explorer\Disable Internet Explorer end of life upgrade notification update.reg	
+Win 7\Context Menu Adds\Remove Run option.reg	
+Win 7\Passwords\Minumum password lengh of 8 chars.reg	
+Win 7\Performance\Enable iGPU Video encoding\jyvad6y2.png	
+Win 8\Startup\Turn_On_Fast_Startup.bat	
+Win 8\Apps\Disable Backup for Windows 8.1 Apps.reg	
+OS independent\UAC\DisableUACforAdmin.reg	
+Win 8\Windows Update\Install automatically updates asap.reg	
+Win 7\Disable Services and Functions\Disable TPM Base Services Service.reg	
+Win 10\Explorer\Disable front panel detection\Disable front panel detection.reg	
+Win 7\Misc Tweaks\Scan with Windows Defender.reg	
+Win 10\LockScreen\Enable PIN reset on sign-in screen for Microsoft accounts\Disable PIN reset on sign-in screen for Microsoft accounts.reg	
+Win 7\Disable Services and Functions\Clear Hide Inactive Icon History.reg	
+Win 7\Context Menu Adds\Add Control Panel Option.reg	
+Win 10\Customize Details of Shortcut Tooltips\Show_default_shortcut_tooltips.reg	
+.git\index	
+Win 10\Context Menu\Share with\Remove Share With Option from Context Menu.reg	
+Win 10\Hide Windows Insider Program in SettingsUpdate & Security\Hide Windows Insider Program in SettingsUpdate & Security.reg	
+Win 10\Windows Update\Hide Windows Insider Program in SettingsUpdate & Security\Hide Windows Insider Program in SettingsUpdate & Security.reg	
+Win 7\Enable Functions and Services\Enable Glass Effect (DWM) without a supported card.reg	
+Win 7\Security\Telemetry\badupdateremover.bat	
+OS independent\Batch\DISM\Dism restorehealt.bat	
+Win 10\Security\Disable Port 1900 UPnP\Disable Port 1900 UPnP.reg	
+Win 10\Security Center\Hide App and Browser Control\Show App and browser control.reg	
+Win 7\Enable Functions and Services\Enable slow-motion window effects min max 3dflip by holding down Shift key.reg	
+Win 10\Context Menu\Remove File Explorer Default Context Menu\Remove File Explorer context menu.reg	
+OS independent\Remove Hardware leftovers\Safely Remove Hardware.zip	
+Win 10\Remove Internet Explorer\Remove-instructions.txt	Renamed to Remove-Internet-Explorer-instructions.txt
+Win 10\Taskmanager\taskmgr_w10-rs2_classic_x64.exe	
+Win 10\Add or Remove Frequent folders\HomeFolderDesktop.reg	
+Win 10\Explorer\Hide Microsoft Edge button in IE\Hide Microsoft Edge button in IE.reg	
+Win 8\My Computer\Remove Documents Link from My Computer.reg	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Default Not Configured Remote Desktop connections.reg	
+Win 10\ReFS\Build 16299 x64\SysWOW64\uReFS.dll	
+Win 10\ReFS\Build 16299 x86\System32\uReFS.dll	
+OS independent\External Software\Winrar\Winrar.reg	
+Win 8\Explorer\Go to the Desktop instead of Start when I Sign in.reg	
+Win 10\Explorer\Remove Infrared in Control Panel\Remove Infrared in Control Panel.reg	
+Win 7\Misc Tweaks\Run 16-Bit applications in a seperate USER VM.reg	
+Win 7\Context Menu Adds\BAT-remove Open with.reg	
+Win 7\Disable Services and Functions\Do not save encrypted pages to disk.reg	
+Win 7\Context Menu Adds\Add User Accounts.reg	
+Win 7\Context Menu Adds\Add MSConfig Option.reg	
+Win 10\Explorer\Show super hidden files (system) in Explorer (not recommanded)\Show super hidden files (system) in Explorer (not recommanded).reg	
+Win 7\Disable Services and Functions\Manual CNG Key Isolation.reg	
+Win 10\Explorer\Show hidden files in Explorer\Show hidden files in Explorer.reg	
+OS independent\WMP\Change the bitrate of the mp3 recording.reg	
+Win 8\Security\Enable USER Logfile on each boot\Enable USER Logfile on each boot.reg	
+Win 10\ReFS\Build 15063_x64\SysWOW64\uReFSv1.dll	
+Win 10\ReFS\Build 15063_x86\System32\uReFSv1.dll	
+OS independent\Batch\Disable Experimentation.bat	
+Win 10\ReFS\Build 15063_x64\SysWOW64\uReFS.dll	
+Win 10\ReFS\Build 15063_x86\System32\uReFS.dll	
+Win 7\Disable Services and Functions\Disable Autorun for Unknown Drives.reg	
+Win 10\Context Menu\Remove Previous Versions Context Menu Option and Tab\Restore Previous Versions Option in Context Menu.reg	
+Win 10\Disable Startup Sound\Enable Startup Sound.reg	
+Win 7\Disable Services and Functions\Disable Peer Networking Identity Manager service.reg	
+Win 7\Shortcuts\Reliability Monitor Shortcut.zip	
+OS independent\Security\Firewall\Enabled Domain Profile.reg	
+Win 7\Disable Services and Functions\Disable Problem Reports and Solutions Control Panel Support Service (2).reg	
+Win 7\Disable Services and Functions\Disable Problem Reports and Solutions Control Panel Support Service.reg	
+Win 10\Taskbar\Enable Jumplists\Remove Jumplists from Windows 10 Start Menu.reg	
+Win 10\ReFS\Add\Add_AutorecoverMOFsReFS_Only.vbs	
+Win 10\ReFS\Add_AutorecoverMOFsReFS_Only.vbs	
+Win 7\Disable Services and Functions\Disables Preview of Movie file formats (allowing you to move rename delete without errors).reg	
+OS independent\Batch\services\DisableDNSClient.bat	
+Win 10\Info\Microsoft Admits Windows 10 Automatic Spying Cannot Be Stopped.txt	
+Win 7\Disable Services and Functions\Disable Function Discovery Resource Publication service.reg	
+Win 10\Explorer\Remove Look for an app in the Store\Add Look for an app in the Store.reg	
+Win 7\Context Menu Adds\Adds LogOff to right click of MY Computer.reg	
+Win 10\Context Menu\BitLocker\Suspend BitLocker\Add_Suspend_Bitlocker_protection_to_context_menu.zip	
+OS independent\Batch\install_wim_tweak\7.cmd	
+Win 10\Show all secret folders under Windows\folders.txt	Will rename folders.txt to ?
+Win 7\Shortcuts\Presentation_Settings.zip	
+Win 10\Features\Apps\Developer Features for Apps\Use_Windows_Store_app_developer_feature.reg	
+Win 10\Features\File system\Enable ReFS\Enable_formatting_with_ReFS.reg	
+Win 8\Explorer\Enable ReFS\Enable_formatting_with_ReFS.reg	
+Win 10\ReFS\Build 15063_x64\System32\uReFSv1.dll	
+Win 10\Windows Update\Enable Old Windows Update UI\Enable Old Windows Update UI in Windows 10.reg	
+Win 10\Sound\Enable New Tray Clock and Calendar\Restore Default Tray Clock and Calendar in Windows 10.reg	
+Win 7\HDD and SSD\Disables autostart for selected drives.REG	
+Win 10\ReFS\Build 16299 x64\System32\uReFSv1.dll	
+Win 10\Features\Apps\Developer Features for Apps\Use_Developer_Mode_developer_feature.reg	
+Win 10\Security\Remove AuthRoot certificates\Remove AuthRoot certificates.reg	
+Win 7\Misc Tweaks\Do not allow Online Help.reg	
+Win 10\Make title bar smaller\Small title bar.reg	
+Win 10\Edge\Disable Extensions in Microsoft Edge in Windows 10.reg	
+Win 7\Misc Tweaks\Change OEM Page.reg	
+Win 8\OEM Page\Change OEM Page.reg	
+OS independent\Security\Windows Updates\HideWinupdates.vbs	
+Win 10\Disable Touch by Finger\Disable touch by finger.reg	
+Win 10\Taskmanager\en-US\taskmgr_w10-rs2_classic_x64.exe.mui	
+Win 10\Taskmanager\en-US\taskmgr_w10-rs2_classic_x86.exe.mui	
+Win 10\Info\Microsoft's Legal Team Explains Protections for Corporate Data.txt	
+OS independent\Security\Firewall\Allow Only Core Networking and Aalow Windows Update.reg	
+Win 7\Enable Functions and Services\Rename the Computer Icon.reg	
+Win 7\DPI\Add DPI Scaling.reg	
+Win 8\Network\Enable detection of slow networks.reg	
+Win 7\Disable Services and Functions\Manual Function Discovery Provider Host.reg	
+Win 10\Context Menu\Remove Previous Versions Context Menu Option and Tab\Remove Previous Versions Tab from Properties Window.reg	
+Win 8\Security\Disable the Lock Screen\Disable the Lock Screen.reg	
+Win 8\Fonts\ClearType AA and gamma.reg	
+Win 8\Boot\Do not defrag boot files.reg	
+Win 7\Disable Services and Functions\Remove Default Programs on Start Menu.reg	
+OS independent\Security\Obsolete\Schannel\kb933430.reg	
+Win 7\Context Menu Adds\Remove Encrypt-Decrypt.reg	
+OS independent\External Software\AMD\Disable Load all devices and drivers.reg	
+Win 10\Disable Wallpaper compression\Desktop qualitywallpaper.reg	
+OS independent\Batch\restart Explorer.bat	
+OS independent\Context Menu\Add or Remove Properties from Recycle Bin Context Menu\Add Properties to Recycle Bin context menu.bat	
+Win 10\Explorer\Confirmation of file deletion\Confirmation of file deletion.reg	
+OS independent\Print Spooler\Reset_and_clear_print_spooler.bat	
+OS independent\Batch\install_wim_tweak\Tests\OneDrive.cmd	
+Win 8\services.msc\Enable ReadyBoost.reg	
+Win 8\Network\Exclude specific folders on server sync.reg	
+.git\description	
+Win 7\Misc Tweaks\Show desktop icons.reg	
+Win 10\Windows Update\Enable Old Windows Update UI\Restore New Windows Update UI in Windows 10.reg	
+Win 7\Disable Services and Functions\Remove User Accounts.reg	
+Win 7\Disable Services and Functions\Disable Action Center.reg	
+Win 7\Disable Services and Functions\Dont mark new applications.reg	
+Win 7\Enable Functions and Services\Enable Dreamscene In Windows 7.reg	
+OS independent\Batch\install_wim_tweak\Tests\Telemetry.cmd	
+Win 10\Clean WinSxS-Folder\clean.txt	
+Win 7\Speedup Tweaks\Mouse hover time default.reg	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\Readme.txt	
+Win 10\Explorer\Show all icons in the Control Panel\Show all icons in the Control Panel.reg	
+OS independent\Security\UAC\Harden UAC.txt	
+Win 7\Disable Services and Functions\Remove Fonts.reg	
+Win 7\Context Menu Adds\Add Change Regional Settings.reg	
+Win 7\Disable Services and Functions\Disable Windows Biometric Service.reg	
+Win 10\Official Documents\Shortcut-Keys-For-Windows-10.docx	
+OS independent\Context Menu\Recyle Bin\Remove Empty Recycle Bin context menu.reg	
+Win 10\Context Menu\Recycle Bin\Remove Empty Recycle Bin context menu.reg	
+Win 8\Context Menu\Recycle Bin\Remove Empty Recycle Bin context menu.reg	
+Win 10\ReFS\Add\Add_manually_THx_x64_x32.txt	
+Win 10\ReFS\Add_manually_THx_x64_x32.txt	
+Win 7\Misc Tweaks\Cascading Browser Menu.reg	
+Win 7\Disable Services and Functions\Remove User Accounts Classic.reg	
+Win 10\Explorer\Drag and Drop behavior\Set_Drag_and_Drop_to_Default.reg	
+Win 7\Shortcuts\Biometric Devices.zip	
+Win 7\Disable Services and Functions\Disable Recent Programs.reg	
+Win 10\Explorer\Turn On or Off Touch Visual Feedback\Turn OFF touch visual feedback.reg	
+Win 10\Action Center\Enable Quick Action buttons in Action Center.reg	
+OS independent\Windows Update\Windows Update Blocker\Windows Update Blocker v1.0.exe	
+OS independent\External Software\nVidia\Add back missing tray icon.reg	
+OS independent\Batch\NetFX3 USB Install.bat	
+Win 8\Explorer\Re-arange the file folders on Windows start.reg	
+Win 10\Explorer\Turn On or Off Touch Visual Feedback\Turn ON darker larger touch visual feedback.reg	
+Win 10\Taskmanager\taskmgr_w10-rs2_classic_x86.exe	
+Win 10\Clean WinSxS-Folder\show real size.txt	
+Win 7\Context Menu Adds\CloseCD context menu.reg	
+Win 7\Passwords\Disable the option to safe passwords on Internet Explorer.reg	
+Win 10\Security\ASLR\aslr.reg	
+Win 8\Security\ASLR\aslr.reg	
+Win 7\Disable Services and Functions\Disable Administrative Shares.reg	
+Win 10\Windows 10 uses your bandwidth to provide other users with updates\Windows 10 uses your bandwidth to provide other users with updates.reg	DDownload is not a typo.
+Win 7\Disable Services and Functions\Disable Program Compatibility Assistant Service.reg	
+Win 8\Apps\Enable Fast Startup for Apps.reg	
+OS independent\Search Engine Shortcut - Create\google.reg	
+Win 7\Speedup Tweaks\Configure the Master File Table.reg	
+Win 7\Context Menu Adds\Add Search option.reg	
+Win 7\Misc Tweaks\Show detailed Device settings in device manager.reg	
+Win 7\Context Menu Adds\Remove Run as Different User.reg	
+Win 8\Fonts\ClearType FONT Gamma smoothines.reg	
+OS independent\Batch\Increase Taskbar Transparency.bat	
+OS independent\reset Network\windows_network_reset.bat	
+Win 7\Disable Services and Functions\Disable Net logon service.reg	
+Win 7\Context Menu Adds\Show Encryption Commands on the Shortcut Menu.reg	
+Win 8\services.msc\Disable System Restore.reg	
+Win 10\Info\RemoveShortcutArrow.rar	
+OS independent\Batch\Software\Low Integrity Firefox.bat	
+Win 10\Windows Update\UUP\Unified Update Platform (UUP) off switch to ESD.reg	
+Win 8\Shell\Folder options.reg	
+Win 8\Windows Update\SHow OS upgrade notifications.reg	
+Win 7\Disable Services and Functions\Manual HomeGroup Listener.reg	
+Win 10\VPN\Roaming\Turn_ON_Allow_VPN_while_roaming.reg	
+Win 7\Security\Force keep positive entries in DNS Cache for 4 hours.reg	
+Win 10\Taskbar\Enable Jumplists\Enable Jumplists in Windows 10 Start Menu.reg	
+OS independent\Batch\Disable Startup Delay.bat	
+Win 7\HDD and SSD\Disable CD-ROM auto start.REG	
+Win 10\Windows Update\Windows Update will only download updates from Microsoft servers (No LAN and Peers)\Windows Update will only download updates from Microsoft servers (No LAN and Peers).reg	
+Win 10\Info\For real Windows 10 privacy, you need the China Government Edition.txt	
+Win 10\Info\Turn off the Windows Customer Experience program.txt	
+Win 7\Disable Services and Functions\Disable automatic updates.reg	
+Win 7\Windows Updates\Disable automatic updates.reg	
+Win 7\Disable Services and Functions\Uninstall system tools in cascading menu in my computer.reg	
+Win 7\Context Menu Adds\Add Internet Explorer to My Computer.reg	
+Win 10\Security Center\Hide Virus and Threat Protection\Hide Virus and threat protection.reg	
+Win 7\Misc Tweaks\Unlock the taskbar.reg	
+Win 7\HDD and SSD\Enable LogEventOverThreshold.REG	
+OS independent\Explorer\Show shadows under windows\Show shadows under windows.reg	
+Win 7\Shortcuts\Encrypting File System Manager.zip	
+Win 10\Disable Maintenance\Disable Maintenance.reg	
+OS independent\Context Menu\Copy and move to\Add Move To.reg	
+Win 10\Explorer\Show NTFS files compressed in a different color in Explorer\Show NTFS files compressed in a different color in Explorer.reg	
+Win 8\Apps\Show the Apps View Automatically when I go to Start.reg	
+Win 7\Enable Functions and Services\Enable Status Bar in all windows.reg	
+Win 8\Apps\Disable Charms Bar and the Apps Switcher.reg	
+OS independent\Batch\Disable Settings Sync.bat	
+Win 8\Context Menu\System Tools\Add System Tools.reg	
+Win 7\HDD and SSD\HDD limit for drive.REG	
+OS independent\Monitor D3D\refreshrate144hzbug.reg	
+OS independent\DISM\Clean Up Image Restorehealth.cmd	
+Win 10\Context Menu\Burn disc image\Add_Burn_disc_image_context_menu_for_ISO_IMG.reg	
+Win 10\Explorer\Remove People Icon on Taskbar in Windows 10 Redstone 3\Add People Icon on Taskbar in Windows 10 Redstone 3.reg	
+Win 10\ReFS\Build 16299 x64\System32\drivers\cs-CZ\refsv1.sys.mui	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\cs-CZ\refsv1.sys.mui	
+Win 10\ReFS\Build 16299 x86\System32\drivers\cs-CZ\refsv1.sys.mui	
+Win 7\Misc Tweaks\Logon screen Text shadow.reg	
+OS independent\Batch\Remove OneDrive.bat	
+OS independent\External Software\OneDrive\Remove OneDrive.cmd	
+Win 8\Internet Explorer\Cascading Browser Menu.reg	
+Win 7\Read out Windows Key\Windows Product Key.vbs	
+Win 10\Info\ECPA-Complaint.pdf	
+Win 7\Context Menu Adds\Add Change Date and Time.reg	
+Win 7\Context Menu Adds\Add open folder in a new window.reg	
+Win 10\Security\Microsoft Malicious Software Removal Tool\Disable Microsoft Malicious Software Removal Tool.reg	
+Win 10\Control Panel\Personalization\Remove Personlization.reg	
+Win 10\Explorer\Reset Desktop background Choose your picture history\Reset Desktop background Choose your picture history.reg	
+Win 7\HDD and SSD\Floppy and CD-ROM Drive only allowed for current user.REG	
+Win 8\Shell\Enable Continuum Mode.reg	
+Win 10\Tiles\Enable Old Network Flyout UI in Windows 10\Disable Network Flyout UI in Windows 10.reg	
+Win 7\Disable Services and Functions\Manual COM+ System Application.reg	
+Win 8\Internet Explorer\MetroIE.reg	
+Win 10\Security\FIPS-compliant\DisableFIPS.reg	
+Win 7\Misc Tweaks\Do not allow Outlook Express attachments.reg	
+Win 7\HDD and SSD\No NoDrivesInSendToMenu.REG	
+OS independent\Explorer\Set Explorer's Folder properties\Set Explorer's Folder properties.reg	
+Win 10\Taskbar\Enable Jumplists in Start Menu\Enable Jumplists in Windows 10 Start Menu.reg	
+Win 10\Security\Disable IPv6\DisableIPv6.reg	
+OS independent\DISM\Clean Up Image Checkhealth.cmd	
+Win 7\Disable Services and Functions\Manual Computer Browser service.reg	
+Win 7\Disable Services and Functions\Manual Computer Browser.reg	
+Win 10\Context Menu\Add run PowerShell as Admin\remove-run-with-powershell-as-administrator.reg	
+Win 8\Fonts\Enable Clear Type Font for everything.reg	
+Win 10\File Sharing\Allow Insecure Guest Auth.reg	
+Win 7\Misc Tweaks\Windows will tell you exactly what it is doing when it is shutting down or is booting.reg	
+Win 10\Network\Near Share\Turn_OFF_Near_Share.bat	
+Win 7\Disable Services and Functions\Remove DPI Scaling.reg	
+Win 7\Context Menu Adds\Remove File List Clipboard.reg	
+Win 10\Remove Adobe Flash\Adobe update and product codes.txt	
+OS independent\Security\Ports\Disable445Feature.ps1	
+Win 10\BSOD Minidump\Automatic_memory_dump.reg	
+Win 7\Security\Disable Roaming security check.reg	
+Win 8\Security\Check roaming owner profiles\Check roaming owner profiles.reg	
+Win 10\No Lock Screen\No Lock Screen.reg	
+Win 10\ReFS\Build 16299 x64\Build 16299 x64.reg	
+OS independent\Indexer\Disable Indexer on Battery\Enable indexing when on battery power.reg	
+Win 10\Explorer\Automatically process video to enhance it\Turn OFF Automatically process video to enhance it.reg	
+OS independent\Batch\Software\Remove One-Drive.bat	
+Win 7\Context Menu Adds\Add Admin Auto Hotkey.reg	
+Win 7\Context Menu Adds\Add System Shortcuts at Top.reg	
+Win 7\Disable Services and Functions\Disable Adaptive Brightness service.reg	
+Win 7\Speedup Tweaks\Only allow long filenames.reg	
+OS independent\Context Menu\Add Right click .wim\WIMrightclick.png	
+Win 7\Misc Tweaks\Allow MDAC internet requests.reg	
+OS independent\Explorer\Disable Windows Explorer StatusBar\Disable Windows Explorer StatusBar - Copy.reg	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\refsv1.sys	
+Win 10\ReFS\Build 15063_x86\System32\drivers\refsv1.sys	
+Win 10\Security\KB remover\HideUpdates.vbs	
+Win 10\Info\How You can Turn Off the Keylogger.txt	
+Win 10\Windows Update\UUP\uup-converter-wimlib-13.7z	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\32-bit (x86)\Release.bat	
+Win 10\Taskbar\Taskbar Context Menu Tweaker\64-bit (x64)\Release.bat	
+Win 10\Resize Metro Apps to Any Size\Resize Metro Apps to Any Size.reg	
+Win 7\Shortcuts\Connect to a Network Projector.zip	
+OS independent\Security\Uninstall IE 9 up to 11\via dism.txt	
+Win 7\Misc Tweaks\Do not allow specific programms.reg	
+Win 10\Windows 10 Home\Group Policy Editor for Windows 10 Home\Offline.txt	PushdPopdManagement
+OS independent\External Software\DNSCrypt\dnscrypt example.txt	
+OS independent\Security\UAC\ALLOW_unsigned_elevation.reg	
+Win 10\Security\SmartScreen\Disable Smartscreen hardening.reg	
+OS independent\Batch\Updates\trackingkbs.bat	
+OS independent\Indexer\Disable Indexer Backoff\Disable Indexer Backoff.reg	
+Win 10\Enable Samples Page\Disable Samples Page.reg	
+Win 7\Context Menu Adds\Add Search to My Computer.reg	
+Win 7\Misc Tweaks\Allow renaming and removing of Recycle Bin.reg	
+OS independent\Context Menu\Add GIT promt\git promt.reg	
+Win 7\Security\MSI\Do not allow the Windows Installer to install anything from removable drives.reg	
+Win 8\Shell\Shell appearance.reg	
+Win 10\Explorer\Enable Windows Features\Disable Windows Features.reg	
+Win 10\Explorer\Fix jumping icons on the Windows 10 desktop\Defaults.reg	
+Win 7\Disable Services and Functions\Disable Offline Files service.reg	
+Win 10\Windows Mobility Center on a Desktop\Disable Windows Mobiity Center on desktop PC.reg	
+Win 7\Disable Services and Functions\Disable IP helper service.reg	
+Win 7\Context Menu Adds\Add Change Sound.reg	
+Win 7\Disable Services and Functions\Disable Taskbar Pinned Programs.reg	
+OS independent\Security\Make USB devices read only\Allow writes.reg	
+Win 10\Features\Disable Preview Builds\Disable Preview Build.reg	
+Win 7\Windows Updates\Enable NonAdmins Install Windows Updates.reg	
+Win 8\CMD\cmdPromptAsAdministrator.reg	
+Win 7\Disable Services and Functions\Remove Recent Items from Start Menu.reg	
+Win 10\Enable Secret Dark Theme\Enable Dark Theme.reg	
+OS independent\External Software\StartIsBack++\StartIsBack++ avatar animation.reg	
+OS independent\Context Menu\Add Copy as Path Option in Windows\Add Copy as Path Option.reg	
+Win 7\Disable Services and Functions\Disable Remote Procedure Call (RPC) Locator Service.reg	
+Win 10\Explorer\Fix jumping icons on the Windows 10 desktop\Fix jumping icons on the Windows 10 desktop.reg	
+Win 7\Disable Services and Functions\Remove System Properties.reg	
+Win 10\Windows Update\Disable (1709 Fall Creators Update) automatically Windows Updates\Disable Windows driver Update.cmd	
+Win 7\Disable Services and Functions\Disable SNMP Trap Service.reg	
+Win 7\Disable Services and Functions\Manual ActiveX Installer.reg	
+Win 7\Disable Services and Functions\Disable PNRP Machine Name Publication Service service.reg	
+Win 7\Misc Tweaks\Show all hidden devices in device manager.reg	
+Win 7\Context Menu Adds\Add Device Manager to My Computer.reg	
+Win 10\Windows Store\Add Windows Store to LTSC\Add-MicrosoftStore.zip	
+Win 7\Misc Tweaks\Scan every file with your AntiVirus program.reg	
+Win 10\Explorer\Disable Online Tips and Help for Settings App\Enable online tips and help for Settings app.reg	
+Win 10\Explorer\Turn off Bluetooth Notification Area Icon\Turn on Bluetooth notification area icon.bat	
+Win 10\Taskmanager\taskmgr_w10-rs2_modern_x86.exe	
+Win 7\UAC\Allow admin sharing with UAc enabled.reg	
+Win 7\Context Menu Adds\Remove Programs Option.reg	
+Win 10\W10 Telemetry batch remover\Batch\win10shitremover.bat	
+Win 10\Taskbar\Enable Old Start Menu\Restore New Start Menu in Windows 10.reg	
+Win 8\Security\DNS\Windows 8 dns leakage fix.reg	
+OS independent\Security\USB\Enable USB write protection in Windows 10.reg	
+OS independent\Extract KBs\Legacy_KB_Extractor_1.1.zip	
+OS independent\Batch\install_wim_tweak\6.cmd	
+Win 7\Disable Services and Functions\Disable UAC notify.reg	
+OS independent\Windows Firewall\Enable Windows Firewall.reg	
+Win 7\Context Menu Adds\Add Network Connections to My Computer.reg	
+Win 10\Taskbar\Enable Jumplists in Start Menu\Remove Jumplists from Windows 10 Start Menu.reg	
+Win 10\Enable New Login Screen\Restore Default Login Screen in Windows 10.reg	
+Win 7\Enable Functions and Services\Enable DVD in Media Player Value Yes.reg	
+Win 10\Tiles\Enable Old Network Flyout UI in Windows 10\Enable Windows 8 Style Network Sidebar in Windows 10.reg	
+Win 7\Enable Functions and Services\Reset Chkdsk.reg	
+.git\logs\HEAD	
+.git\logs\refs\heads\master	
+.git\logs\refs\remotes\origin\HEAD	
+Win 10\Permanently Disable Notification Center in Windows 10\Enable Notification Center in Windows 10.reg	
+Win 10\Security\Remove Explorer ads\Remove_most_windows_Ads.cmd	
+Win 10\Setting different Backgrounds for Dual Monitors\Source.txt	
+Win 8\services.msc\default_services-windows-8.rar	
+Win 10\Context Menu\BitLocker\Remove_Turn_on_BitLocker_context_menu.reg	
+Win 7\Disable Services and Functions\Disable Autorun for Network Drives (2).reg	
+Win 7\Disable Services and Functions\Disable Autorun for Network Drives.reg	
+Win 8\Login and Shutdown\Allow to power off the monitor on login or shutdown.reg	
+Win 8\services.msc\Disable ipsec services.reg	
+Win 10\Shell\Remove Quick Access\Remocequickaccess.reg	
+Win 10\Windows Update\Disable using your machine for sending windows updates to others.bat	
+OS independent\Security\Firewall\Do not allow exceptions on Domain Profiles.reg.reg	
+Win 10\Security Center\Hide Family Options\Show Family options.reg	
+Win 10\Security\Disable IPv6\Powershell.txt	
+Win 10\Explorer\Pin More than Three Contacts to Taskbar\Pin More than Three Contacts to Taskbar.reg	
+Win 10\Explorer\Pin More than Three Contacts to Taskbar\Remove Pin More than Three Contacts to Taskbar.reg	
+Win 7\Context Menu Adds\Remove Registry Editor Option.reg	
+Win 8\Context Menu\Choose Power Plan\Remove_Choose_Power_Plan_from_Desktop_Context_Menu.reg	
+Win 10\Context Menu\Remove Troubleshoot Compatibility Context Menu\Add Troubleshoot Compatibility context menu.reg	
+OS independent\Windows Power Management\Unlock hidden Power Management settings.reg	
+Win 10\Turn On or Off Add Space after Text Suggestion for Hardware Keyboard\Turn on add space after text suggestion for hardware keyboard.reg	
+Win 8\Search\Tweak the entire Search.reg	
+Win 7\Disable Services and Functions\Disable Portable Device Enumerator Service.reg	
+Win 10\Security Center\Hide Firewall & Network Protection\Show Firewall and network protection.reg	
+OS independent\Batch\install_wim_tweak\5.cmd	
+OS independent\Security\Obsolete\Cipher\tlssecurity.reg	
+Win 10\Features\Apps\Developer Features for Apps\Use_Sideload_apps_developer_feature.reg	
+Win 7\Misc Tweaks\Allow security settings for the workstation too.reg	
+Win 7\Disable Services and Functions\Disable Interactive Services Detection service.reg	
+Win 8\Windows Media Player\WMP Skipps.reg	
+Win 7\Speedup Tweaks\Disable Compatibility Manager.reg	
+Win 8\Security\Disable Compatibility-Manager\Disable Compatibility-Manager.reg	
+Win 10\Explorer\Drag and Drop behavior\Set_Drag_and_Drop_to_Move_by_default.reg	
+Win 7\Printer\Do not allow network printers.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\en-US\refsv1.sys.mui	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\en-US\refsv1.sys.mui	
+Win 10\ReFS\Build 15063_x86\System32\drivers\en-US\refsv1.sys.mui	
+Win 7\Disable Services and Functions\Uninstall desktop shortcuts in cascading menu in my computer.reg	
+Win 7\Speedup Tweaks\Increase the USB-Polling time.reg	
+Win 10\Security\Telemetry by MS official link\NumberOfSIUFInPeriod.reg	
+Win 7\Disable Services and Functions\Disable Autorun.reg	
+Win 7\Disable Services and Functions\Remove Devices and Printers on Start Menu.reg	
+Win 7\UAC\Do not lower brigthness on secure promt.reg	
+OS independent\External Software\O&O ShutUp10\batch tweaks.bat	
+Win 10\Taskbar\Show seconds in taskbar clock\undo.reg	
+Win 7\UAC\Virtualization UAC for secure useage.reg	
+Win 10\Explorer\Remove Look for an app in the Store\Remove Look for an app in theStore.reg	
+Win 10\Windows Update\Disables the download and automatic updates from WU\Disables the download and automatic updates from WU.reg	
+Win 8\Windows Media Player\Stop Windows Media Player from generating album art files.reg	
+OS independent\Security\List Updates\command promt.txt	
+Win 7\Disable Services and Functions\Disable Certificate Propagation service.reg	
+Win 10\More Windows Title Colors\More Windows Tile Colors.reg	
+Win 10\GameDVR\GameDVR_Config.exe	
+Win 10\Disable Touch by Finger\Enable touch by finger.reg	
+Win 7\Enable Functions and Services\Disable displaying the public folder.reg	
+Win 7\Security\LAN\no lmhash on passwort change on LAN.reg	
+Win 10\Network\Near Share\Turn_ON_Near_Share_for_My_devices_only.bat	
+Win 7\Enable Functions and Services\Restore Default Library Settings.reg	
+Win 7\Misc Tweaks\Change EFS encryption Algorithm.reg	
+Win 8\Security\Show info warnings on user login\Show info warnings on user login.reg	
+Win 7\Printer\Do not allow print browsing.reg	
+OS independent\Security\Remove Telemetry Tasks\Block Telemetry via Task Scheduler.txt	
+Win 10\Info\Telemetry IPs.txt	
+Win 7\UAC\Enable UAC.reg	
+Win 7\Context Menu Adds\Add Empty Recycle Bin option.reg	
+Win 7\Context Menu Adds\Add Registry Editor Option.reg	
+Win 10\Disable Inactive Window Scrolling\Disable Inactive Window Scrolling.reg	
+Win 8\Security\Detailed login or logout messages\Detailed login or logout messages.reg	
+OS independent\Recycle Bin\Recycle Bin without a name\NoName.reg	
+OS independent\Batch\install_wim_tweak\2.cmd	
+Win 7\Disable Services and Functions\Disable PnP-X IP Bus Enumerator service.reg	
+Win 8\Internet Explorer\Start Internet Explorer on Windows start.reg	
+OS independent\File system\NTFS File encryption\Enable NTFS file encryption.reg	
+Win 10\Context Menu\App Mode to Context Menu to Toggle Light or Dark Theme\Remove App Mode from Desktop context menu.reg	
+Win 10\Taskbar\Enable Old Start Menu in Windows 10\Restore New Start Menu in Windows 10.reg	
+OS independent\Recycle Bin\Enhanced Recycle Bin Menu\ERBM-.reg	
+OS independent\External Software\Internet Download Manager\IDMCleaner.bat	
+Win 7\Disable Services and Functions\Manual SPP Notification Service.reg	
+OS independent\Security\Firewall\Do not allow exceptions on Standard Profiles.reg	
+OS independent\NET\dotNET Native Image Generator.cmd	
+OS independent\Context Menu\Recyle Bin\Add Empty Recycle Bin context menu.reg	
+OS independent\External Software\Adobe premiere Pro 2018\Premiere12Portable.reg	
+Win 7\Context Menu Adds\Add Windows Apps at Bottom.reg	
+.git\hooks\applypatch-msg.sample	
+Win 10\Taskbar\Enable taskbar context menus\Enable taskbar context menus.reg	
+Win 8\Apps\Add app paths.reg	
+Win 10\Enable or Disable Sign-in Screen Background Image\Disable_Sign_in_Background_Image.reg	
+Win 10\LockScreen\Disable Login Screen Background Image\Disable Login Screen Background Image in Windows 10.reg	
+OS independent\External Software\MPC-HC BE\Best Quality settings.reg	
+Win 7\HDD and SSD\Energysafer disabled for certain drives.REG	
+OS independent\Context Menu\TrueCrypt\Truecrypt.reg	
+Win 10\Explorer\Allow video to play at a lower resolution\Turn OFF-Allow video to play at a lower resolution.reg	
+Win 10\Tiles\Enable Old Notification Center in Windows 10\Restore New Notification Center in Windows 10.reg	
+Win 7\Context Menu Adds\Add Printers.reg	
+Win 8\Windows Update\Example configuration for Updates.reg	
+Win 10\Context Menu\Recycle Bin\Add Empty Recycle Bin context menu.reg	
+Win 8\Context Menu\Recycle Bin\Add Empty Recycle Bin context menu.reg	
+Win 10\Security\Encryption\Diffie-Hellman Key Exchange.reg	
+Win 7\Disable Services and Functions\Remove Adobe Drive CS4 from Context Menu.reg	
+OS independent\Batch\pool.ntp.org Time Servers.bat	
+Win 10\Security\LSA protection\additional LSA protection of credentials.reg	
+Win 10\Windows Store\Disable Windows Store\Disable Windows Store.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\cs-CZ\refsv1.sys.mui	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\cs-CZ\refsv1.sys.mui	
+Win 10\ReFS\Build 15063_x86\System32\drivers\cs-CZ\refsv1.sys.mui	
+Win 10\Windows Update\Windows Update Full Control\WUFCS.cmd	
+OS independent\External Software\DNSCrypt\DNSCrypt_example.reg	
+Win 10\Context Menu\Remove Manage\Remove Manage from This-PC.reg	
+OS independent\DISM\Clean Up Image Scanhealth.cmd	
+OS independent\Context Menu\Add Right click .wim\Add WIM righ tclick.reg	
+Win 10\Battery\Enable Old Battery Flyout UI in Windows 10\Restore Default Battery Flyout UI in Windows 10.reg	
+OS independent\Extract KBs\KB_Extractor 1.2.zip	
+Win 10\Context Menu\Add run PowerShell as Admin\add-run-with-powershell-as-administrator.reg	
+Win 10\Shell\Share with\Disable share settings.reg	
+Win 10\Shell\Share with\Enable share settings.reg	
+Win 10\Make title bar smaller\after.png	
+Win 8\Windows Update\Allow non signated Windows Updates.reg	
+Win 7\Context Menu Adds\Add Programs Option.reg	
+Win 10\Taskmanager\taskmgr_w10-rs2_modern_x64.exe	
+Win 10\Context Menu\Run with priority\Remove_Run_with_priority_from_context_menu.reg	
+Win 10\Microsoft Edge security hardening\TODO - add registry tweak for this.txt	
+Win 10\Taskbar\Enable taskbar context menus\Disable taskbar context menus.reg	
+Win 7\Misc Tweaks\Increase the refresh intervall for group policy.reg	
+Win 10\UAC\Restore Modern UAC Prompt and Credential UI in Windows 10.reg	
+OS independent\Batch\install_wim_tweak\List Packages.cmd	
+OS independent\Batch\install_wim_tweak\11.cmd	
+OS independent\Security\Ports\Disable SMB Port 445.reg	
+Win 10\VPN\Metered networks\Turn_ON_Allow_VPN_over_metered_networks.reg	
+OS independent\Delete files faster\fastdel.bat	
+Win 8\Windows Update\Restart popup for installed updates.reg	
+Win 7\Disable Services and Functions\Disable Remote Registry.reg	
+OS independent\Boot\Verbose Logon\Enable verbose logon.reg	
+OS independent\Performance\Processor Scheduling\Default_processor_scheduling.reg	
+Win 10\Taskbar\Enable Old Notification Center\Restore New Notification Center in Windows 10.reg	
+Win 10\Windows Update\Hide a single driver\hidedrivers.vbs	
+Win 7\Context Menu Adds\Add System Properties.reg	
+OS independent\Batch\VPN.AC OVPN Config example.ps1	
+Win 10\Hide quick access icon in the navigation pane of Windows Explorer\Hide quick access icon in the navigation pane of Windows Explorer - Copy.reg	
+Win 10\ReFS\Readme\howto.txt	
+Win 7\Shortcuts\Remote Shutdown Dialog.zip	
+Win 10\Taskbar\Enable Old Start Menu\Enable Old Start Menu in Windows 10.reg	
+Win 10\removal\WIM_Tweaking_Pack.rar	
+Win 10\Icons\Force Windows 10 to Align Icons Text to Center.reg	
+Win 7\Speedup Tweaks\Increase shutdown time.reg	
+Win 7\Context Menu Adds\Add DPI Scaling.reg	
+Win 8\services.msc\Disable ReadyBoost.reg	
+Win 10\Edge\Always show address bar in Edge.reg	
+Win 7\Printer\Do not allow the internet printer on a server.reg	
+Win 10\Disable Login Screen Background Image in Windows 10\Disable Login Screen Background Image in Windows 10.reg	
+Win 7\Info\CLSID Key (GUID) Shortcuts List for Windows 7.txt	
+Win 7\Misc Tweaks\Increase Network Throughput.reg	
+Win 10\Info\Windows 10 Default App Remover 1.2.exe	
+OS independent\Explorer\Disable Windows Explorer StatusBar\Enable Windows Explorer StatusBar.reg	
+Win 7\HDD and SSD\Disable PrefetchParameters to fix SSD.reg	
+Win 7\Shortcuts\Windows Mobility Center Shortcut.zip	
+Win 7\Disable Services and Functions\Disable Tracking of Broken Shortcut Links.reg	
+Win 7\Speedup Tweaks\Mouse Hover time 50.reg	
+Win 10\Security\Telemetry by MS official link\SpyNetReporting.reg	
+Win 10\Windows Defender\Enable PUP detection\Windows Defender an adware killer.reg	
+Win 10\Energy profiles\Tweak for High Performance Profile.reg	
+Win 7\UAC\Disable UAC.reg	
+Win 10\Windows Update\Disable Windows 10 Creators Update upgrade notifications\Disable Windows 10 Creators Update upgrade notifications.reg	
+Win 7\Disable Services and Functions\Disable NTFS Last Access Time Stamp.reg	
+Win 10\Security\Telemetry by MS official link\See here.txt	
+OS independent\Explorer\Network Connectivity Status Indicator (NCSI)\Network Connectivity Status Indicator (NCSI) undo.reg	
+OS independent\Explorer\Network Connectivity Status Indicator (NCSI)\Network Connectivity Status Indicator (NCSI).reg	
+OS independent\Batch\Disable Cortana and Web Search.bat	
+Win 7\Context Menu Adds\Add Power Options.reg	
+Win 7\Misc Tweaks\Underline letters on right click.reg	
+Win 10\ReFS\Build 15063_x64\System32\uReFS.dll	
+Win 7\Disable Services and Functions\Manual Peer Name Resolution Protocol.reg	
+OS independent\Change Icon Cache Size\Change_Icon_Cache_Size.vbs	
+Win 7\HDD and SSD\Disable internal burning service.REG	
+Win 7\Disable Services and Functions\Disable Autorun for RAM Drives.reg	
+Win 7\Security\Internet Explorer\Do not allow automatically installations of addons.reg	
+OS independent\Batch\install_wim_tweak\Tests\Biometrics.cmd	
+Win 8\Windows Update\Update msg configuration.reg	
+OS independent\Prevent Changing Desktop Background for All Users\Allow changing desktop background.reg	
+OS independent\Long Paths\Enable Long Paths.reg	
+OS independent\Long Paths\Let Windows handle long Paths .reg	
+Win 10\Taskbar\Hide Touch Keyboard button on taskbar\Hide_Touch_Keyboard_button_on_taskbar.bat	
+OS independent\Recycle Bin\Recycle Bin without a name\Default.reg	
+Win 7\Context Menu Adds\Add cmd prompt here.reg	
+Win 8\Security\Shows desktop only after all login are executed\Shows desktop only after all login are executed.reg	
+OS independent\Context Menu\Add Windows Update Context Menu In Windows 10\Add Windows Update Context Menu In Windows 10.reg	
+Win 7\Enable Functions and Services\Turn On Taskbar Thumbnail Live Previews.reg	
+Win 7\Disable Services and Functions\Do not Use large icons on Start Menu.reg	
+Win 7\Disable Services and Functions\Make the Windows registration with Microsoft unnecessary.reg	
+Win 7\Disable Services and Functions\Disable Autorun for All Drives.reg	
+OS independent\Context Menu\View Owner\Remove View Owner.reg	
+Win 7\Disable Services and Functions\Manual Microsoft .NET Framework NGEN v2.0.50727 service.reg	
+OS independent\DISM\ComponentCleanupMakeUpdatesPerm.cmd	
+Win 7\Disable Services and Functions\Remove Change Sound.reg	
+Win 10\Context Menu\Open file location\Add_Open_Location_context_menu.reg	
+Win 8\Windows Update\Disable Windows Update access.reg	
+Win 10\Features\Disable OneDrive\Disable OneDrive.reg	
+Win 7\Misc Tweaks\Security settings per PC basis.reg	
+Win 7\Context Menu Adds\Add Copy to and move to.reg	
+OS independent\Disable Hybrid Sleep\off.txt	
+Win 10\ReFS\Build 16299 x64\System32\drivers\en-US\refs.sys.mui	
+Win 10\ReFS\Build 16299 x64\SysWOW64\drivers\en-US\refs.sys.mui	
+Win 10\ReFS\Build 16299 x86\System32\drivers\en-US\refs.sys.mui	
+Win 7\Disable Services and Functions\Disable Peer Networking Grouping service.reg	
+Win 7\Context Menu Adds\Add Event Viewer Option.reg	
+Win 10\Info\bring-your-own-dilemma.pdf	
+Win 7\Security\Internet Explorer\Restict unsafe online help functions.reg	
+OS independent\Prevent Changing Desktop Background for All Users\Prevent changing desktop background.reg	
+Win 7\Disable Services and Functions\Manual Application Experience.reg	
+OS independent\Batch\Disable Windows Insider Panel.bat	
+Win 10\Turn On or Off Add Space after Text Suggestion for Hardware Keyboard\Turn off add space after text suggestion for hardware keyboard.reg	
+Win 10\Boot\Enable Fastboot\FastBoot.reg	
+OS independent\Speed\Speed up shell and desktop.reg	
+Win 7\Misc Tweaks\Cache more Icons.reg	
+Win 7\Passwords\Microsoft Office 2000 do not allow to safe passwords via cache.reg	
+Win 10\W10 Telemetry batch remover\Overview\Source.txt	Renamed to Configure Windows 10 devices to stop data flow to Microsoft-Source.txt
+Win 8\GUI\Change logintext.reg	
+Win 7\Enable Functions and Services\Enable MP3 Encoding from right-click while browsing.reg	
+Win 7\Sound\Disable internal speaker.REG	
+OS independent\External Software\OpenVPN\Source.txt	
+Win 7\Speedup Tweaks\Enable Superfetch which may speedup most used programms.reg	
+Win 7\Enable Functions and Services\Enable addition Avalon effects.reg	
+Win 8\Shell\Add Scan with Windows Defender.reg	
+OS independent\Info\Check If Microsoft is Downloading Windows 10 without Your Awareness.txt	
+Win 10\Context Menu\Remove Pin to Start\Add Pin to Start context menu.reg	
+OS independent\Context Menu\Add or Remove Properties from Recycle Bin Context Menu\Remove Properties from Recycle Bin context menu.bat	
+OS independent\Ms Office\Disabel office 16 telemetry\Disable telemetry.reg	
+Win 10\Security Center\Hide Family Options\Hide Family options.reg	
+Win 8\Context Menu\ATI\Remove ATI Context Menu.reg	
+Win 10\Clean WinSxS-Folder\shrink.txt	
+Win 7\Disable Services and Functions\Disable Libraries in Windows 7.reg	
+Win 7\Security\Telemetry\wiper.bat	
+Win 7\Misc Tweaks\Show the real CD-recording speed in Nero.reg	
+Win 7\Disable Services and Functions\Remove- Shortcut Suffix from shortcuts.reg	
+Win 7\Disable Services and Functions\Disable Function Discovery Provider Host service.reg	
+Win 7\Shortcuts\User Files Folder - Pin to Taskbar.zip	
+Win 8\Apps\Disable New App Toast Notification.reg	
+OS independent\External Software\O&O ShutUp10\Readme.txt	
+Win 10\Windows Update\Windows automatic update and Store through a proxy\Workaround.txt	
+Win 10\GameDVR\Enable GameDVR.reg	
+Win 10\GameDVR\Disable GameDVR.reg	
+Win 7\Misc Tweaks\RemoveToolbarsInTaskbar.reg	
+Win 10\Explorer\Disable Fast User Switching\Enable Fast User Switching.bat	
+Win 7\Speedup Tweaks\Increase the search speed.reg	
+Win 10\ReFS\Build 15063_x64\System32\drivers\en-US\refs.sys.mui	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\en-US\refs.sys.mui	
+Win 10\ReFS\Build 15063_x86\System32\drivers\en-US\refs.sys.mui	
+Win 10\BSOD Minidump\Create_Minidump_on_BSOD.reg	
+OS independent\File system\NTFS file compression\Enable NTFS file compression.reg	
+Win 10\Theme\Disable Aero with Blur\Disable Aero with Blur.reg	
+Win 7\Context Menu Adds\Add Reboot to right click of MY Computer.reg	
+Win 7\Context Menu Adds\Add System Tools at Bottom.reg	
+Win 7\Security\Telemetry\telemetryremover.vbs	
+Win 10\BSOD Minidump\Active_memory_dump.reg	
+OS independent\UAC\DisableUAC.reg	
+OS independent\External Software\nVidia\Disable nVidia startups.reg	
+Win 7\Misc Tweaks\Show Windows classic folders.reg	
+OS independent\Speed\Windows Priority tweak.reg	
+Win 7\HDD and SSD\Hide certain HDDs.REG	
+README.md	
+Win 7\Speedup Tweaks\Speedup Desktop and Shutdown.reg	
+Win 10\Security\SAMRi10 - Hardening SAM Remote Access in Windows 10Server 2016\SAMRi10.zip	
+Win 7\Enable Functions and Services\Enable Run Command.reg	
+OS independent\Batch\install_wim_tweak\Tests\AllJoyn.cmd	
+.git\objects\pack\pack-4fe9c7f4a3c89abace222cdd3e921cbd0bcb1d0b.pack	
+Win 7\Misc Tweaks\64-Bit restore folders in this PC.reg	
+Win 8\My Computer\64-Bit restore folders in this PC.reg	
+Win 10\Explorer\Remove People Icon on Taskbar in Windows 10 Redstone 3\Remove People Icon on Taskbar in Windows 10 Redstone 3.reg	
+Win 8\Context Menu\CMD\Add cmd.reg	
+Win 7\Passwords\Disable Microsoft-Outlook 2002 password dialog.reg	
+LICENSE	
+OS independent\Batch\OV & UV\CPU overclocking.bat	
+Win 10\Windows Update\Bypass login after Windows 10 Updates\Bypass login after Windows 10 Updates.reg	
+Win 7\Disable Services and Functions\Uninstall Items in My Computer.reg	
+OS independent\Batch\SearchUI\disable-searchUI.bat	
+Win 10\Taskbar\Always show all icons and notifications on the taskbar\Always show all icons and notifications on the taskbar.reg	
+Win 7\Security\Disable WPAD.reg	
+Win 10\Context Menu\Pin to Quick access\Remove_Pin_to_Quick_access_from_Context_Menu.reg	
+Win 10\gpedit\gpedit.msc for home.bat	
+Win 7\Context Menu Adds\Add MSCONFIG to My Computer.reg	
+Win 10\Theme\Fix\wq.png	
+Win 7\Security\Only allow specific shell extensions.reg	
+Win 10\Permanently Disable Notification Center in Windows 10\Disable Notification Center Completely in Windows 10.reg	
+Win 8\Context Menu\Start Menu Pin\Pin to Start Menu.reg	
+OS independent\Batch\Disable Performance Counters.cmd	
+OS independent\External Software\LibreOffice\Disable OpenGL.reg	
+publickey.CHEF-KOCH@protonmail.com.txt	
+Win 7\Disable Services and Functions\Disable Windows Defender startup.reg	
+OS independent\Batch\Software\Opera set integrity level.bat	
+Win 10\Security\Anti-Telemetry Firewall rules\add rules.cmd	
+OS independent\Control Panel\Unhide Control Panel items.reg	
+Win 8\Windows Update\How often WUS should search for updates.reg	
+Win 10\Explorer\Enable Pin and Unpin Items on Jump Lists\Enable Pin Unpin Items on Jump Lists.reg	
+Win 10\Security\LSA protection\Disable additional LSA protection of credentials - Copy.reg	
+Win 8\Network\Remove network scheduled tasks.reg	
+Win 10\Enable or Disable Sign-in Screen Background Image\Enable_Sign_in_Background_Image.reg	
+Win 10\LockScreen\Disable Login Screen Background Image\Restore Login Screen Background Image in Windows 10.reg	
+Win 10\Windows Update\Disable Windows 10 Creators Update upgrade notifications\Enable Windows 10 Creators Update upgrade notifications - Copy.reg	
+Win 7\Disable Services and Functions\Disable Network Access Protection Agent service.reg	
+Win 8\Shell\shellPromptAsAdministrator.reg	
+Win 10\Sound\Win Keys For Volume Control.inf	
+Win 7\Context Menu Adds\Add Administrative Tools.reg	
+Win 7\Context Menu Adds\Add Registry Editor.reg	
+Win 7\Misc Tweaks\Set Control Panel on Classic View and small icons.reg	
+OS independent\MSI Mode\MSI_mode_utils.ps1	
+Win 10\Remove extra recovery partition\Readme.txt	Renamed Readme.txt to Remove-Extra-Recovery-Partition-Readme.txt
+Win 8\Context Menu\Powershell and Passwort\Password Powershell.reg	
+Win 10\Taskbar\Show seconds in taskbar clock\Show seconds in taskbar clock.reg	
+Win 10\Context Menu\Add Copy to FolderMove to Folder to context menu\Add Copy to FolderMove to Folder to context menu.reg	
+OS independent\External Software\Kaspersky\Disable daily trial notification 2018.reg	
+Win 10\ReFS\Add\Add_manually_RS1_x64_x32.txt	
+Win 10\ReFS\Add_manually_RS1_x64_x32.txt	
+Win 7\Security\Telemetry\all-in-one.bat	
+Win 10\Windows Update\Update History\Readme.txt	
+OS independent\Fonts\Change Windows default fonts\Restore Windows defult fonts.reg	
+Win 7\Disable Services and Functions\Disable Bluetooth Support Service service.reg	
+OS independent\External Software\Kaspersky\Disable daily trial notification 2017.reg	
+Win 8\Context Menu\ATI\Enable ATI Context Menu.reg	
+Win 10\Cortana\Disable cortana but keep search\Disable cortana but keep search.reg	
+Win 8\Explorer\Windows Explorer Ribbon Quick Access Toolbar Settings.reg	
+Win 10\Sound\Enable Old Volume Control Slider UI\Enable Old Volume Control Slider UI in Windows 10.reg	
+Win 7\Internet Explorer\Turn On Display all websites in IE Compatibility View.reg	
+Win 10\Taskbar\Hide Touch Keyboard button on taskbar\Show_Touch_Keyboard_button_on_taskbar.bat	
+Win 7\Disable Services and Functions\Disable Tablet PC Input Service.reg	
+Win 8\Network\Disable Thumbsdb on network drives.reg	
+Win 10\Windows 10 Home\Group Policy Editor for Windows 10 Home\Online.txt	PushdPopdManagement
+Win 7\Disable Services and Functions\Disable Windows Remote Management (WS-Management) Service.reg	
+OS independent\Performance\HPET\HPET.txt	
+Win 10\Explorer\Drag and Drop behavior\Set_Drag_and_Drop_to_Copy_by_default.reg	
+Win 8\dll ocx\REGISTER or UNREGISTER DLL & OCX FILE.reg	
+Win 7\Misc Tweaks\Change the OEM info - second example.reg	
+Win 8\Libraries\Remove all libraries.reg	
+Win 10\APPS\reinstall aps.txt	
+OS independent\Batch\Disable Windows Store.bat	
+Win 8\services.msc\Disable Prefetcher on SSD Systems.reg	
+Win 10\Explorer\Show file extensions in Explorer\Show file extensions in Explorer.reg	
+OS independent\Performance\Processor Scheduling\Background_services_processor_scheduling.reg	
+Win 7\Misc Tweaks\Make the text white in command windows.reg	
+Win 10\Cortana\Kill Cortana\Kill Cortana.reg	
+Win 7\Context Menu Adds\Add option for unknown files Open with notepad.reg	
+Win 10\Enable Samples Page\Enable Samples Page.reg	
+Win 7\Context Menu Adds\Add Window Colorization.reg	
+OS independent\Batch\Software\Kaspersky reset example.bat	
+Win 10\BSOD Minidump\Create_NO_Dump_File_on_BSOD.reg	
+Win 7\Enable Functions and Services\Enable Aero Peek.reg	
+Win 8\Apps\Disable Windows 8.1 Apps and Store related Services.reg	
+Win 10\ReFS\Build 15063_x64\SysWOW64\drivers\refs.sys	
+Win 10\ReFS\Build 15063_x86\System32\drivers\refs.sys	
+Win 7\SysProfiles\profile paths.reg	
+Win 7\Misc Tweaks\500ms Delay Aero Peek.reg	
+Win 10\Context Menu\Add open with Notepad context menu\Add open with Notepad context menu.reg	
+OS independent\Batch\Remove Windows Search.bat	
+Win 10\Remove my folders This PC\x86.reg	
+Win 7\Disable Services and Functions\Disable User Account Control UAC.reg	
+Win 10\Boot\Add Last Known Good Configuration to Boot Menu\Add Last Known Good Configuration to Boot Menu.reg	
+Win 10\File Sharing\Disallow Insecure Guest Auth.reg	
+Win 7\Disable Services and Functions\Disable file association web-service.reg	
+Win 7\Disable Services and Functions\Remove Desktop Icons Settings.reg	
+OS independent\God Mode\Remove God Mode.reg	
+Win 7\Windows Updates\Not Configured NonAdmins Install Windows Updates.reg	
+OS independent\Batch\Updates\Windows 10 migration uninstall.bat	
+OS independent\Print Spooler\cmd.txt	
+Win 10\Info\Windows 10 Licensing Logic - update.txt	
+Win 10\Performance\Runtime Broker\Enable Runtime Broker.reg	
+Win 7\Disable Services and Functions\Disable Aero Shake.reg	
+Win 7\Context Menu Adds\Add Windows Apps.reg	
+Win 10\ReFS\Build 16299 x64\System32\drivers\refs.sys	
+Win 10\Security Center\Hide Device Performance & Health\Hide Device performance and healt.reg	
+OS independent\Indexer\Disable Indexer Backoff\Enable Indexer Backoff.reg	
+Win 7\Misc Tweaks\Logon Screen Text default.reg	
+Win 7\Passwords\Enable passwords in the recovery console.reg	
+Win 7\Disable Services and Functions\Disable Windows Media Player AutoUpdates.reg	
+Win 10\Remote Desktop\Disable Remote Desktop Connections\Enable Remote Desktop without Network Level Authentification.reg	
+Win 7\Disable Services and Functions\Disable Windows Error Reporting Service.reg	
+Win 7\Context Menu Adds\add programm and features to my computer.reg	
+Win 7\Security\EFS\Disable EFS encryption.reg	
+Win 8\Windows Update\How long should WUS wait for a reboot.reg	
+Win 10\Context Menu\Remove Previous Versions Context Menu Option and Tab\Remove Previous Versions Option from Context Menu.reg	
+Win 10\Network\Near Share\Turn_ON_Near_Share_for_Everyone_nearby.bat	
+Win 7\Sound\Disable Beep.REG	
+Win 7\Disable Services and Functions\Disable Quality Windows Audio Video Experience Service.reg	
+Win 10\Security\Telemetry by MS official link\DisableFileSyncNGSC.reg	
+Win 7\Disable Services and Functions\Remove Always Select Current Users.reg	
+OS independent\Batch\Updates\Windows telementry package remover.bat	
+Win 10\Explorer\Disable front panel detection\Remove Disable front panel detection.reg	
+OS independent\Batch\Disable Hibernation and Fast Start.bat	
+Win 7\Context Menu Adds\Add Task Scheduler.reg	
+Win 10\ReFS\Build 16299 x64\System32\uReFS.dll	
+Win 10\Disable Login Screen Background Image in Windows 10\Restore Login Screen Background Image in Windows 10.reg	
+OS independent\Delete Windows.OLD Folder\Readme.txt	
+OS independent\Batch\install_wim_tweak\Tests\Search.cmd	
+Win 7\Disable Services and Functions\Remove Change date time.reg	
+Win 7\Context Menu Adds\Add User Accounts Classic.reg	
+OS independent\Batch\Disable System Restore.bat	
+Win 10\removal\syntax.txt	
+Win 10\Managa Creators Update\Upgrade and Privacy Experience (UPX) is displayed in the UI on managed Windows 10 device.reg	
+OS independent\External Software\nVidia\nvidia.cmd	
